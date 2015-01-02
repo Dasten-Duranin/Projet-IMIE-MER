@@ -1,0 +1,140 @@
+.smallInput {
+    width: 150px;}
+
+textarea {
+    width: 450px;}
+
+#FormCoord {
+    margin-left: 10px;}
+
+.SubDel {
+    position: relative;
+    top: 5px;}
+
+h3 {
+    text-align: left;
+    font-size: 1.050em;}
+
+h2 {
+    font-size: 1.375em;}
+
+.loginInput {
+    display: none;}
+
+.MDP {
+    display: none;}
+
+#ModifMDP {
+    top: 22px;}
+
+.validation {
+    display: none;
+    position: absolute;
+    left: 275px;
+    top: -0px;
+    width: 20px;
+    height: 20px;}
+
+#validMDP {
+    left: 300px;
+    top: 22px;}
+
+
+
+
+/********************/
+/* Onglet Entreprise*/
+/********************/
+
+
+
+
+.editionEn {
+    position: absolute;
+    left: 275px;
+    top: -0px;
+    width: 20px;
+    height: 20px;}
+
+#InscriptionEntreprise {
+    display: block;
+    position: relative;}
+
+#FormRightEn {
+    position: relative;
+    float: left;}
+
+#FormPhotoEn {
+    width: 125px;
+    position: absolute;
+    top: 50px;
+    left: 350px;}
+
+#SubmitEntreprise {
+    position: relative;
+    right :-275px;
+    margin: 15px 15px 15px;
+    width : 150px;
+    height: 50px;}
+
+#FormLeftEn {
+    position: relative;
+    float: left;
+    width: 650px;}
+
+#FormRechercheEn {
+    margin-top: 25px;}
+
+
+
+
+/****************/
+/* Onglet Eleve */
+/****************/
+
+
+
+
+.editionEl {
+    position: absolute;
+    left: 250px;
+    top: -0px;
+    width: 20px;
+    height: 20px;}
+
+#InscriptionEleve {
+    position: relative;}
+
+#FormRightEl {
+    position: relative;
+    float: left;}
+
+#FormPhotoEl {
+    width: 125px;
+    position: absolute;
+    top: 50px;
+    left: 350px;}
+
+#SubmitEleve {
+    position: relative;
+    right :-275px;
+    margin: 15px 15px 15px;
+    width : 150px;
+    height: 50px;}
+
+#FormLeftEl {
+    position: relative;
+    float: left;
+    width: 650px;}
+
+#FormRechercheEl {
+    margin-top: 25px;}
+
+#Accroche {
+    width: 450px;}
+
+caption {
+    height: 45px;}
+
+#errorEl {
+    margin: 15px 15px 15px;}

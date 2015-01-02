@@ -1,0 +1,148 @@
+section #InfosPerso #PhotoProfil {
+    margin: 15px 15px 15px;
+    float: left;
+    width: 157px;
+    height: 202px;}
+
+section #InfosPerso #Identite {
+    position: relative;
+    float: left;
+    margin: 10px 0px 15px;
+    font-size: 1.250em;
+    line-height: 1.375em;
+    width: 200px;
+    border: 1px solid black;}
+
+section #InfosPerso #Accroche span {
+    position: relative;
+    float: left;
+    margin: 25px 0px 15px;
+    font-size: 1.250em;
+    line-height: 1.375em;
+    vertical-align:middle;
+    margin: 1.5em 1.5em;
+    padding: 5px 5px 5px;
+    border: 1px solid black;
+    -moz-box-shadow: 0 1px 1px #333333;
+    -webkit-box-shadow: 0 1px 1px #333333;
+    box-shadow: 0 1px 1px #333333;
+    border-radius: 0.5em;
+    -webkit-border-radius: 0.5em;
+    -moz-border-radius:0.5em;
+    height: 65px;
+    width: 325px;
+    left: 50px;
+    top: -45px;
+    text-align: center;}
+
+section #CoordDescrip #SecondBloc {
+    position: relative;
+    float: left;
+    margin: 0px 15px 15px;
+    font-size: 1.250em;
+    line-height: 1.375em;}
+
+section #CoordDescrip #Descriptif {
+    float: right;
+    margin: 1.5em 1.5em;
+    padding: 5px 5px 5px;
+    border: 1px solid black;
+    -moz-box-shadow: 0 1px 1px #333333;
+    -webkit-box-shadow: 0 1px 1px #333333;
+    box-shadow: 0 1px 1px #333333;
+    border-radius: 0.5em;
+    -webkit-border-radius: 0.5em;
+    -moz-border-radius:0.5em;
+    height: 150px;
+    width: 525px;
+    position: relative;
+    right: 85px;}
+
+.LiensWebSite {
+    position: relative;
+    top: -15px;}
+
+.LienWebSite {
+    position: relative;
+    top: 12px;}
+
+.LogosWebSite {
+    position: relative;
+    width: 45px;
+    height: 45px;
+    top: 15px;}
+
+.BoutonRecherche1 {
+    background-color: #57bc74;
+    position: relative;
+    float: right;
+    border: 1px solid black;
+    -moz-box-shadow: 0 1px 1px #333333;
+    -webkit-box-shadow: 0 1px 1px #333333;
+    box-shadow: 0 1px 1px #333333;
+    border-radius: 0.5em;
+    -webkit-border-radius: 0.5em;
+    -moz-border-radius:0.5em;
+    margin-right: 35px;
+    width: 200px;
+    height: 50px;}
+
+.BoutonRecherche0 {
+    background-color: #ee3124;
+    position: relative;
+    float: right;
+    border: 1px solid black;
+    -moz-box-shadow: 0 1px 1px #333333;
+    -webkit-box-shadow: 0 1px 1px #333333;
+    box-shadow: 0 1px 1px #333333;
+    border-radius: 0.5em;
+    -webkit-border-radius: 0.5em;
+    -moz-border-radius:0.5em;
+    margin-right: 35px;
+    width: 200px;
+    height: 50px;}
+
+#Recherche {
+    position: relative;
+    right: 100px;}
+
+#Domaines {
+    position: relative;
+    left: 100px;}
+
+.Domaine {
+    width: 117px;
+    height: 167px;
+    margin-right: 25px;}
+
+.edition {
+    width: 25px;
+    height: 25px;}
+
+#editionPhotoProfil {
+    position: absolute;
+    left: 140px;
+    top: 315px;}
+
+#editionIdentite {
+    position: absolute;
+    left: 170px;
+    top: 180px;}
+
+#editionAccroche {
+    position: absolute;
+    right: 315px;
+    top: 230px;}
+
+#editioncoordonnes {
+    position: absolute;
+    left: 245px;
+    top: 65px;}
+
+#coordonnes {
+    border: 1px solid black;
+    width: 275px;}
+
+.ModifLiens {
+    position: absolute;
+    right: -25px;}

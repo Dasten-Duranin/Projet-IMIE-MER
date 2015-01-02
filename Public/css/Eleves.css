@@ -1,0 +1,92 @@
+.BoutonTypeDomaine {
+    border-radius: 1em;
+    -webkit-border-radius: 1em;
+    -moz-border-radius:1em;
+    -moz-box-shadow: 0 1px 1px #333333;
+    -webkit-box-shadow: 0 1px 1px #333333;
+    box-shadow: 0 1px 1px #333333;
+    background-color: #57bc74;
+    position:relative;
+    right: -25%;}
+
+#Filtre {
+    background-color: #e2e2e2;
+    width: 150px;
+    float: left;
+    margin: 15px 15px;
+    padding: 5px 5px;
+    -moz-box-shadow: 0 1px 1px #333333;
+    -webkit-box-shadow: 0 1px 1px #333333;}
+
+#Filtre * {
+    margin: 15px 5px;}
+
+#Developpement {
+    float:right;
+    left : 35%;
+    margin-bottom: 10px;}
+
+.Eleve {
+    position: relative;
+    width: 700px;
+    height: 175px;
+    background-color: #49b9bd;
+    float: right;
+    margin-right: 35px;
+    margin-top: 25px;
+    border-radius: 1em;
+    -webkit-border-radius: 1em;
+    -moz-border-radius:1em;}
+
+div.InfosEleve {
+    background-color: #57bc74;
+    width: 220px;
+    height: 165px;
+    border-radius: 1em;
+    -webkit-border-radius: 1em;
+    -moz-border-radius:1em;
+    margin: 5px 5px;
+    float: left;}
+
+.FiltreVille {
+    width: 100px;}
+
+.InfosEleve .Noms {
+    width: 85px;
+    float: right;
+    padding: 5px 5px;
+    margin: 5px 5px;
+    overflow: auto;}
+
+.InfosEleve .Ville {
+    text-align: center;
+    }
+
+.InfosEleve img {
+    margin: 5px 5px;
+    border-radius: 1em;
+    -webkit-border-radius: 1em;
+    -moz-border-radius:1em;}
+
+
+.DomaineEleve {
+    background-color: #57bc74;
+    width: 100px;
+    height: 165px;
+    border-radius: 1em;
+    -webkit-border-radius: 1em;
+    -moz-border-radius:1em;
+    float: right;
+    margin: 5px 5px;}
+
+.Eleve span {
+    float: left;
+    width: 360px;
+    text-align: center;
+    margin-top: 10px;}
+
+.DomaineEleve ul {
+    float: left;
+    list-style-type: none;
+    padding: 5px 5px;
+    margin: 5px 5px;}

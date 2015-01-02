@@ -1,0 +1,46 @@
+
+.generale{
+	border: 1px solid black;
+}
+
+.connexion{
+	text-align: center;
+	margin-top: 30px;
+}
+
+h2{
+	border-bottom: 1px solid black;
+	border-top: 1px solid black;
+	padding: 20px;
+}
+
+.login{
+	position: relative;
+	left: 25%;
+	padding: 20px;
+
+}
+
+#log{
+	margin-bottom: 25px;
+}
+
+.bout{
+	border-top: 1px solid black;
+}
+
+input[type=submit]{
+	position: relative;
+	left: 35%;
+	width: 130px;
+	height: 50px;
+}
+
+input[name="connexion"]{
+	margin: 25px;
+	float: left;
+}
+
+input[name="inscription"]{
+	margin: 25px;
+

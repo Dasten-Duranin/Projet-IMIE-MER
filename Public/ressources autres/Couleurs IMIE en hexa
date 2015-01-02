@@ -1,0 +1,109 @@
+#fdb515 Jaune
+#57bc74 Vert
+#49b9bd Bleu
+#ee3124 rouge
+#f3f2f0 blanc
+#282c2f noir
+#e2e2e2 gris
+
+
+
+
+Tableau
+
+
+                            <article class="Eleve">
+                                <table border="1">
+                                    <tr>
+                                        <td>
+                                            <table border="1">
+                                                <tr>
+                                                    <td>
+                                                        <table border="1">
+                                                            <tr>
+                                                                <td>
+                                                                    <img src="img/profil.jpg" width="105" height="135" />
+                                                                </td>
+                                                                <td>
+                                                                    <table border="1">
+                                                                        <tr><td>LE ROUX</td></tr>
+                                                                        <tr><td>Tanguy</td></tr>
+                                                                        <tr><td>IT Start</td></tr>
+                                                                    </table>
+                                                                </td>
+                                                            </tr>
+                                                        </table>
+                                                        <table border="1">
+                                                            <tr>
+                                                                <td>Bécon Les Granitssrnbbwsnd</td>
+                                                            </tr>
+                                                        </table>
+                                                    </td>
+                                                </tr>
+                                            </table border="1">
+                                        </td>
+                                        <td width="400">
+                                            Description
+                                        </td>
+                                        <td>
+                                            <table>
+                                                <tr><td>Javascript</td></tr>
+                                                <tr><td>Php</td></tr>
+                                                <tr><td>Autre</td></tr>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </article>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                            <article class="Eleve">
+                                <div class="InfosEleve">
+                                    <img src="img/profil.jpg" width="105" height="135" />
+                                    <ul>
+                                        <li>LE ROUX</li>
+                                        <li>Tanguy</li>
+                                        <li>IT Start</li>
+                                    </ul>
+                                    <p>Bécon les Granits</p>
+                                </div>
+                                <span>
+                                    <p>Laborum eu id aute dolore esse labore ad ad ex est. Eiusmod excepteur sint deserunt Lorem do laboris officia in aliqua dolore. Non esse consequat adipisicing nostrud sint reprehenderit esse do. Voluptate ipsum esse nisi amet enim aliquip est voluptate ea occaecat laborum irure fugiat. Id do ea amet laboris exercitation labore proident eiusmod non anim reprehenderit aliquip ea esse. Sunt in ad elit ipsum nostrud sint ea esse. Amet quis qui mollit anim ipsum voluptate velit eu culpa aliqua mollit velit ea eu.</p>
+
+                                </span>
+                                <div class="DomaineEleve">
+                                    <ul>
+                                        <li>LE ROUX</li>
+                                        <li>Tanguy</li>
+                                        <li>IT Start</li>
+                                    </ul>
+                                </div>
+                            </article>

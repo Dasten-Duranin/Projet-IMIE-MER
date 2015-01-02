@@ -1,0 +1,26 @@
+update du 02/01/2015
+Rename du projet.
+Amélioration du code de l'édition profil.
+
+Update du 01/01/2015
+Ajout de l'édition Entreprise.
+Revu de tous les controlers afin d'utiliser les fonctions privées.
+édition des Mot de passe et des Identifients fonctionnel. -> édition élèves fini.
+Ajout de l'édition Identifient pour les élèves.
+
+Update du 30/12/2014
+Ajout de l'édition de profil élève, pas encore totalement fonctionnelle.
+Amélioration du script de choix de domaines.
+Correction du bug graphique à l'inscription, les background sont enfin de taille évolutive.
+Ajout de sécurité dans l'édition de profil
+Architecture des éditions et des "MonProfil" repensés : 1 controller, 2 vues
+
+Update du 28/12/2014 :
+Ajout de sécurité,
+Ajout des ProfilsEleves
+Ajout de la Fonctionnalité du bouton Profil lorsque l'on est loggé en tant qu'élève.
+Ajout de liens DoYouBuzz, Linkedin et Twitter dans la BDD et dans les Profils d'élèves et Inscription.
+Ajout des Logos de Domaines.
+Corrections mineurs sur plusieurs fichiers.
+
+Le dump de la BDD se trouve dans le dossier CodeIgniter.
