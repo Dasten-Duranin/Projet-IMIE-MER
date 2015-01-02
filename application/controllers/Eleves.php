@@ -25,7 +25,7 @@
             }
 
             else {
-                header('location:http://localhost/CodeIgniter/Connexion/index');
+                header('location:'.base_url().'Connexion/index');
             }
         }
         protected function Affichage() {
@@ -51,13 +51,13 @@
             if ($this->session->userdata('user_input')) {
 
                 $this->session->unset_userdata('user_input');
-                header('location:http://localhost/CodeIgniter/Connexion/index');
+                header('location:'.base_url().'Connexion/index');
 
             }
 
             else {
 
-                header('location:http://localhost/CodeIgniter/Connexion/index');
+                header('location:'.base_url().'Connexion/index');
 
             }
         }

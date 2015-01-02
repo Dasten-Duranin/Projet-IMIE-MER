@@ -33,12 +33,12 @@
                     $this->load->view('view_Template_footer');
                 }
                 else {
-                    header('location:http://localhost/CodeIgniter/ProfilEleve/Deconnexion');
+                    header('location:'.base_url().'ProfilEleve/Deconnexion');
                 }
             }
 
             else {
-                header('location:http://localhost/CodeIgniter/Connexion/index');
+                header('location:'.base_url().'Connexion/index');
             }
         }
         public function Deconnexion() {
@@ -46,13 +46,13 @@
             if ($this->session->userdata('user_input')) {
 
                 $this->session->unset_userdata('user_input');
-                header('location:http://localhost/CodeIgniter/Connexion/index');
+                header('location:'.base_url().'Connexion/index');
 
             }
 
             else {
 
-                header('location:http://localhost/CodeIgniter/Connexion/index');
+                header('location:'.base_url().'Connexion/index');
 
             }
         }
@@ -75,18 +75,18 @@
                         echo $ids->idEntreprise.'<br>';
                     }
                     else if ($ids->idEleve != FALSE) {
-                        header('location:http://localhost/CodeIgniter/ProfilEleve/Affichage?idEleve='.$ids->idEleve);
+                        header('location:'.base_url().'ProfilEleve/Affichage?idEleve='.$ids->idEleve);
                     }
                     else {
                         echo 'Bonjour Administrateur, cette section n\'est pas encore construite';
                     }
                 }
                 else {
-                    header('location:http://localhost/CodeIgniter/ProfilEleve/Deconnexion');
+                    header('location:'.base_url().'ProfilEleve/Deconnexion');
                 }
             }
             else {
-                header('location:http://localhost/CodeIgniter/Connexion/index');
+                header('location:'.base_url().'Connexion/index');
             }
         }
     }

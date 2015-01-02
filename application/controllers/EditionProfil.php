@@ -96,7 +96,7 @@
                 }
             }
             else {
-                header('location:http://localhost/CodeIgniter/Connexion/index');
+                header('location:'.base_url().'Connexion/index');
             }
         }
         public function Deconnexion() {
@@ -104,13 +104,13 @@
             if ($this->session->userdata('user_input')) {
 
                 $this->session->unset_userdata('user_input');
-                header('location:http://localhost/CodeIgniter/Connexion/index');
+                header('location:'.base_url().'Connexion/index');
 
             }
 
             else {
 
-                header('location:http://localhost/CodeIgniter/Connexion/index');
+                header('location:'.base_url().'Connexion/index');
 
             }
         }
@@ -202,7 +202,7 @@
                     echo 'idDomainRe :'.$DomaineRe.'<br>';
                 }
             }
-            header('location:http://localhost/CodeIgniter/EditionProfil/Index');
+            header('location:'.base_url().'EditionProfil/Index');
         }
         protected function Edition_Entreprise() {
 
@@ -240,7 +240,7 @@
                     echo 'idDomainRe :'.$DomaineRe.'<br>';
                 }
             }
-            header('location:http://localhost/CodeIgniter/EditionProfil/Index');
+            header('location:'.base_url().'EditionProfil/Index');
         }
         protected function Edition_Adresse() {
 
@@ -267,7 +267,7 @@
 
                         $this->Model_EditionProfil->update_login($Identifiant, $login);
                         $this->session->set_userdata('user_input', $Identifiant);
-                        
+
                         $this->errorEl = 'Identifient changé avec succès.';
                         $this->errorEn = 'Identifient changé avec succès.';
 

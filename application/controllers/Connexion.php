@@ -22,7 +22,7 @@ class Connexion extends CI_controller {
                 if($this->Model_Connexion->check_connect($login, $mdp)){
 
                     $this->session->set_userdata('user_input', $login);
-                    header('location:http://localhost/CodeIgniter/Eleves/Index');
+                    header('location:'.base_url().'Eleves/Index');
 
                 }
                 else {
@@ -34,14 +34,14 @@ class Connexion extends CI_controller {
 
             }
             else if ($inscription !=FALSE) {
-                header('location:http://localhost/CodeIgniter/Inscription/Index');
+                header('location:'.base_url().'Inscription/Index');
             }
             else {
                 $this->load->view('view_Connexion');
             }
         }
         else {
-            header('location:http://localhost/CodeIgniter/Eleves/Index');
+            header('location:'.base_url().'Eleves/Index');
         }
     }
 }

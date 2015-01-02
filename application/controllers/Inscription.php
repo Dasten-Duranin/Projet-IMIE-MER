@@ -34,7 +34,7 @@
                 }
             }
             else {
-                header('location:http://localhost/CodeIgniter/Eleves/Index');
+                header('location:'.base_url().'Eleves/Index');
             }
         }
         protected function Affichage() {
@@ -106,7 +106,7 @@
                     $this->Model_Inscription->insert_idEntreprise_On_Utilisateur($this->idEntreprise, $idUtilisateur);
 
                     $this->session->set_userdata('user_input', $login);
-                    header('location:http://localhost/CodeIgniter/Eleves/Index');
+                    header('location:'.base_url().'Eleves/Index');
                 }
                 else {
 
@@ -174,7 +174,7 @@
                 $this->Model_Inscription->insert_idEleve_On_Utilisateur($idEleve, $idUtilisateur);
 
                 $this->session->set_userdata('user_input', $login);
-                header('location:http://localhost/CodeIgniter/Eleves/Index');
+                header('location:'.base_url().'Eleves/Index');
             }
             else {
 
