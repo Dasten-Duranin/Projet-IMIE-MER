@@ -1,6 +1,5 @@
 window.addEventListener("load",start,false); /*Ne pas exectuer code tant que page non chargée */
 
-
 function start () {
 
     var typeDomaine = 'tous';
