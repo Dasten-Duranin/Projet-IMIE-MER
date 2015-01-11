@@ -16,7 +16,8 @@ body{
     position: relative;
     top:100px;
     margin-left: auto;
-    margin-right: auto;}
+    margin-right: auto;
+    margin-bottom: 25px;}
 .line {
     height:1px;
     background-color: #24404c;

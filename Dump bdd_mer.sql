@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Client :  127.0.0.1
--- Généré le :  Dim 28 Décembre 2014 à 23:44
+-- Généré le :  Lun 12 Janvier 2015 à 00:25
 -- Version du serveur :  5.6.21
 -- Version de PHP :  5.6.3
 
@@ -102,9 +102,21 @@ CREATE TABLE IF NOT EXISTS `comentreprise` (
 --
 
 CREATE TABLE IF NOT EXISTS `demande` (
-  `idOffre` int(11) NOT NULL,
-  `idDomaine` int(11) NOT NULL
+  `idDomaine` int(11) NOT NULL,
+  `idOffre` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Contenu de la table `demande`
+--
+
+INSERT INTO `demande` (`idDomaine`, `idOffre`) VALUES
+(1, 1),
+(2, 1),
+(3, 2),
+(4, 2),
+(5, 1),
+(6, 1);
 
 -- --------------------------------------------------------
 
@@ -165,7 +177,7 @@ CREATE TABLE IF NOT EXISTS `eleve` (
 --
 
 INSERT INTO `eleve` (`idEleve`, `Nom`, `Prenom`, `Sexe`, `DateNaiss`, `LieuNaiss`, `TelEleve`, `EmailEleve`, `PhotoProfil`, `GitHub`, `DoYouBuzz`, `Linkedin`, `Twitter`, `Accroche`, `Descriptif`, `Alternance`, `Stage`, `idAdresse`, `idUtilisateur`, `Classe`) VALUES
-(1, 'LE ROUX', 'Tanguy', 'Homme', '1995-06-26', 'Reims', '06 42 51 13 07', 'leroux.tanguy.51@gmail.com', NULL, NULL, 'http://www.doyoubuzz.com/tanguy-le-roux', 'https://www.linkedin.com/pub/tanguy-le-roux/aa/982/902', 'https://twitter.com/LE_ROUX_Tanguy', 'hahahahahahahahahaha!!!!', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.', 1, 0, 1, 2, 'IT Start'),
+(1, 'LE ROUX', 'Tanguy', 'Homme', '1995-06-26', 'Reims', '06 42 51 13 07', 'leroux.tanguy.51@gmail.com', NULL, '', 'http://www.doyoubuzz.com/tanguy-le-roux', 'https://www.linkedin.com/pub/tanguy-le-roux/aa/982/902', 'https://twitter.com/LE_ROUX_Tanguy', 'hahahahahahahahahahahaha!!!!', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.', 1, 0, 1, 2, 'IT Start'),
 (2, 'DUCHEN', 'Guillaume', 'Homme', '1988-04-23', 'Aurillac', '06 51 46 85 95', 'guillaume.duchen@gmail.com', NULL, NULL, NULL, '        fr.linkedin.com/pub/guillaume-duchen/a5/b69/a09', 'https://twitter.com/g__duchen', 'men sana in corpore sano', 'Exercitation velit est est magna ipsum fugiat voluptate duis. Sint cupidatat excepteur elit ea officia nulla occaecat reprehenderit deserunt irure labore quis Lorem. Cillum consectetur esse sit excepteur cupidatat est esse ullamco nisi reprehenderit labore exercitation proident. Et labore cupidatat reprehenderit dolor fugiat nulla ad elit fugiat aliquip id eiusmod exercitation.\r\n', 1, 1, 2, 3, 'IT Start'),
 (3, 'DESMARES', 'Sebastien', 'Autre', '1993-11-15', 'Paris', '04 56 46 56 52', 'Seb.desmares@gmail.com', NULL, NULL, NULL, NULL, 'https://twitter.com/93Desmares', 'hahahaha !!', 'Lorem ut eiusmod commodo ad aute et exercitation in laborum proident fugiat incididunt eiusmod et. Occaecat cupidatat irure magna amet ex irure eiusmod excepteur. Consequat deserunt reprehenderit reprehenderit pariatur ea eu ullamco quis duis nulla commodo magna veniam. Ex ullamco minim pariatur duis dolore cupidatat aliqua dolor elit pariatur. Enim nulla eiusmod mollit sint enim consequat laboris ad cupidatat do. Qui eu do tempor culpa Lorem. Ex esse ut minim in deserunt adipisicing occaecat nisi non pariatur fugiat magna.', 1, 1, 3, 4, 'IT Start'),
 (4, 'LEPAGE', 'Kévin', 'Femme', '1996-05-15', 'Moncul', '/', 'kekedu49@hotmail.fr', NULL, 'GitHub.com', NULL, NULL, 'https://twitter.com/LepageKe', 'Noob', 'Tapez votre message kikoolol', 1, 1, 5, 6, 'IT Start'),
@@ -197,7 +209,7 @@ CREATE TABLE IF NOT EXISTS `entreprise` (
 --
 
 INSERT INTO `entreprise` (`idEntreprise`, `LogoEntreprise`, `NomEntreprise`, `TelEntreprise`, `FaxEntreprise`, `EmailEntreprise`, `DescriptifEntreprise`, `Stagiaire`, `Alternant`, `Employe`, `idAdresse`, `idUtilisateur`) VALUES
-(1, NULL, 'Web2C', '06 32 84 29 94', '/', 'agence.web2c@gmail.com', 'Tapez votre message', 1, 0, 0, 4, 5);
+(1, NULL, 'Web2C', '06 32 84 29 93', '/', 'agence.web2c@gmail.com', 'Tapez votre message', 1, 0, 0, 4, 5);
 
 -- --------------------------------------------------------
 
@@ -228,13 +240,22 @@ INSERT INTO `fait` (`idDomaine`, `idEntreprise`) VALUES
 
 CREATE TABLE IF NOT EXISTS `offres` (
 `idOffre` int(11) NOT NULL,
+  `DateOffre` date NOT NULL,
   `TitreOffre` varchar(150) DEFAULT NULL,
   `DescriptifOffre` longtext,
   `StageOffre` tinyint(1) DEFAULT NULL,
   `AlternanceOffre` tinyint(1) DEFAULT NULL,
-  `EmploitOffre` tinyint(1) DEFAULT NULL,
+  `EmploiOffre` tinyint(1) DEFAULT NULL,
   `idEntreprise` int(11) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+
+--
+-- Contenu de la table `offres`
+--
+
+INSERT INTO `offres` (`idOffre`, `DateOffre`, `TitreOffre`, `DescriptifOffre`, `StageOffre`, `AlternanceOffre`, `EmploiOffre`, `idEntreprise`) VALUES
+(1, '2014-12-18', 'Offre de Stage et d''alternance fictive en développement.', 'Ce poste est tout ce qu''il y a de plus fictif possible, il sert juste à tester et à développer ce site internet qui sert à mettre en relation les entreprises et les élèves de l''IMIE.\r\nCompétences requises :\r\n-CSS\r\n-HTML\r\n-Php\r\n\r\nUne compétence optionnelle mais appréciable serait le JavaScript.\r\n', 1, 1, NULL, 1),
+(2, '2015-01-10', 'fake Offer number two', 'Toujours pour tester ce site internet, il me fallait une deuxième offre dans la même entreprise.\r\nPour cette offre nous mettrons plus de compétences en réseau et donc du helpdesk et de l''infrastructure même si ça n''a rien a voir .. :D', NULL, 1, NULL, 1);
 
 -- --------------------------------------------------------
 
@@ -368,7 +389,7 @@ ALTER TABLE `souhaite`
 -- Index pour la table `utilisateur`
 --
 ALTER TABLE `utilisateur`
- ADD PRIMARY KEY (`idUtilisateur`), ADD KEY `FK_Utilisateur_idEleve` (`idEleve`), ADD KEY `FK_Utilisateur_idEntreprise` (`idEntreprise`);
+ ADD PRIMARY KEY (`idUtilisateur`), ADD UNIQUE KEY `idUtilisateur` (`idUtilisateur`), ADD UNIQUE KEY `Login` (`Login`), ADD KEY `FK_Utilisateur_idEleve` (`idEleve`), ADD KEY `FK_Utilisateur_idEntreprise` (`idEntreprise`);
 
 --
 -- AUTO_INCREMENT pour les tables exportées
@@ -408,7 +429,7 @@ MODIFY `idEntreprise` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
 -- AUTO_INCREMENT pour la table `offres`
 --
 ALTER TABLE `offres`
-MODIFY `idOffre` int(11) NOT NULL AUTO_INCREMENT;
+MODIFY `idOffre` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT pour la table `utilisateur`
 --

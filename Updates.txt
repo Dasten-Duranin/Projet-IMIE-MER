@@ -1,3 +1,10 @@
+Update du 12/01/2015
+Ajout du pannel de gestion des offres d'emploi des entreprises.
+Ajout de la possibilité de supprimer une offre, 
+fonctionnélitée de suppression protégée par la demande des identifiants.
+Ajout de la possibilité de créer une offre d'emploi
+Ajout d'un champ date dans la table offre afin de savoir quand cette derniere a été créée.
+
 update du 02/01/2015
 Rename du projet.
 Amélioration du code de l'édition profil.

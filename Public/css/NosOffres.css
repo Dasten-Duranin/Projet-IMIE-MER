@@ -1,0 +1,146 @@
+/********************/
+/***CSS Du tableau***/
+/********************/
+
+table.ListOffer {
+    border-spacing: 0;
+    text-align: center;
+    width: 900px;
+    margin-left: auto;
+    margin-right: auto;}
+
+th.ListOffer, td.ListOffer {
+    border: 1px solid #000;
+    padding: 0.5em 1em;}
+
+/* the first 'th' within the first 'tr' of the 'thead': */
+thead.ListOffer tr:first-child th:first-child {
+    border-radius: 0.6em 0 0 0;}
+
+/* the last 'th' within the first 'tr' of the 'thead': */
+thead.ListOffer tr:first-child th:last-child {
+    border-radius: 0 0.6em 0 0;}
+
+/* the first 'td' within the last 'tr' of the 'tbody': */
+tbody.ListOffer tr:last-child td:first-child {
+    border-radius: 0 0 0 0.6em;}
+
+/* the last 'td' within the last 'tr' of the 'tbody': */
+tbody.ListOffer tr:last-child td:last-child {
+    border-radius: 0 0 0.6em 0;}
+
+thead.ListOffer {
+    background-color: #fdb515;}
+
+.submitmodifier {
+    width: 25px;
+    height: 25px;}
+
+.tickinfo {
+    height: 25px;}
+
+.visualiser {
+    height: 25px;}
+
+.submitdel {
+    height: 25px;}
+
+div#errorOf {
+    margin-left: 25px;}
+
+/*********************************/
+/***Confirmation de suppression***/
+/*********************************/
+
+#confirmArea {
+    -moz-box-shadow: 0 5px 5px #333333;
+    -webkit-box-shadow: 0 5px 5px #333333;
+    box-shadow: 0 5px 5px #333333;
+    border: 1px solid black;
+    border-radius: 1em;
+    -webkit-border-radius: 1em;
+    -moz-border-radius:1em;
+    width: 350px;
+    position: absolute;
+    background-color: white;
+    left: 300px;
+    top: 150px;
+    display: none;}
+
+#ConfirmTable {
+    margin-left: auto;
+    margin-right: auto;}
+
+.ConfirmInput {
+    width: 175px;
+    margin-top: 10px;}
+
+#idOffre {
+    display: none;}
+
+.ConfirmSubmit {
+    width: 75px;
+    height: 25px;
+    margin: 5px 85px 5px;}
+
+#CancelDelete {
+    position: absolute;
+    width: 75px;
+    height: 25px;
+    left: 200px;
+    top: 105px;
+    }
+    /********************************/
+    /***CSS de la création d'offre***/
+    /********************************/
+
+#CreateOffer {
+    background-color: #57bc74;
+    margin-top: 25px;
+    -moz-box-shadow: 0 5px 5px #333333;
+    -webkit-box-shadow: 0 5px 5px #333333;
+    box-shadow: 0 5px 5px #333333;
+    border-radius: 1em;
+    -webkit-border-radius: 1em;
+    -moz-border-radius:1em;
+    margin-left: 180px;
+    cursor:pointer;}
+
+#CreateOffer:active {
+    position: relative;
+    top: 3px;
+    -moz-box-shadow: 0 0px 0px #333333;
+    -webkit-box-shadow: 0 0px 0px #333333;
+    box-shadow: 0 0px 0px #333333;}
+
+    /******************/
+    /**CSS Formulaire**/
+    /******************/
+
+#NewOffre {
+    margin-top: 50px;
+    width: 900px;
+    margin-right: auto;
+    margin-left: auto;
+    display: none;}
+
+#FormLeftEn {
+    position: relative;
+    float: left;}
+
+.Details {
+    width: 475px;
+    max-width: 500px;}
+
+#SubmitOffre {
+    width: 150px;
+    height: 50px;
+    position: relative;
+    left: 250px;}
+
+#FormRightEn {
+    position: relative;
+    float: right;}
+
+caption.Right {
+    width: 275px;}

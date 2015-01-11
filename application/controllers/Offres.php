@@ -2,8 +2,7 @@
 
 class Offres extends CI_controller {
 
-    protected $errorEl;
-    protected $errorEn;
+    protected $errorOf;
     protected $eleve;
     protected $entreprise;
     protected $idAdresse;
@@ -33,7 +32,19 @@ class Offres extends CI_controller {
                 else if ($ids->idEntreprise != FALSE) {
 
                     $this->idEntreprise = $ids->idEntreprise;
-                    $this->Affichage_Entreprise();
+                    $ConfirmDel = $this->input->post('ConfirmDel');
+                    $SubmitOffre = $this->input->post('SubmitOffre');
+
+                    if ($ConfirmDel != FALSE) {
+                        $this->Delete_Offer();
+                    }
+                    else if ($SubmitOffre != FALSE) {
+                        $this->Offer_Creation();
+                    }
+                    else {
+                        $this->idEntreprise = $ids->idEntreprise;
+                        $this->Affichage_Mes_Offres();
+                    }
                 }
                 else if ($ids->idEleve != FALSE) {
 
@@ -78,19 +89,70 @@ class Offres extends CI_controller {
         $this->load->view('view_Template_footer');
 
     }
-    protected function Affichage_Entreprise() {
+    protected function Affichage_Mes_Offres() {
 
         $login = $this->session->userdata('user_input');
 
+        $data['errorOf'] =$this->errorOf;
+
         $data['Offres'] = $this->Model_Offres->Offres_by_idEntreprises($this->idEntreprise);
+        $data['liste_domaine_developpement']=$this->Model_Offres->liste_domaine_developpement();
+        $data['liste_domaine_reseau']=$this->Model_Offres->liste_domaine_reseau();
 
         $inclusions['welcome']='<p>Bonjour, vous êtes connectés</p> <p>en tant que '.$login.'</p>';
-        $inclusions['inclusions']='<link rel="stylesheet" media="all" type"text/css" href="'.base_url().'Public/css/OffresEntreprise.css"/>
-        <script type="text/javascript" src="'.base_url().'Public/js/Eleves.js"></script>';
+        $inclusions['inclusions']='<link rel="stylesheet" media="all" type"text/css" href="'.base_url().'Public/css/NosOffres.css"/>
+        <script type="text/javascript" src="'.base_url().'Public/js/NosOffres.js"></script>';
         $this->load->view('view_Template_head',$inclusions);
-        $this->load->view('view_OffresEntreprise',$data);
+        $this->load->view('view_NosOffres',$data);
         $this->load->view('view_Template_footer');
 
+    }
+    protected function Offer_Creation() {
+
+        $DateOffre = date("Y-m-d");
+        $TitreOffre = $this->input->post('TitreOffre');
+        $DescriptifOffre = $this->input->post('DescriptifOffre');
+        $StageOffre = $this->input->post('StageOffre');
+        $AlternanceOffre = $this->input->post('AlternanceOffre');
+        $EmploiOffre = $this->input->post('EmploiOffre');
+
+        if ($StageOffre != FALSE) {$StageOffre=1;} else {$StageOffre=0;}
+        if ($AlternanceOffre != FALSE) {$AlternanceOffre=1;} else {$AlternanceOffre=0;}
+        if ($EmploiOffre != FALSE) {$EmploiOffre=1;} else {$EmploiOffre=0;}
+
+        $idOffre =$this->Model_Offres->insert_offre($DateOffre, $TitreOffre, $DescriptifOffre, $StageOffre, $AlternanceOffre, $EmploiOffre, $this->idEntreprise);
+
+        $DomaineDevOf = $this->input->post('DomaineDevOf');
+        $DomaineResOf = $this->input->post('DomaineResOf');
+
+        foreach( $DomaineDevOf as $DomaineDe ) {
+            if ($DomaineDe != 0) {
+                $this->Model_Offres->insert_domaine_offres($DomaineDe, $idOffre);
+            }
+        }
+        foreach( $DomaineResOf as $DomaineRe ) {
+            if ($DomaineRe != 0) {
+                $this->Model_Offres->insert_domaine_offres($DomaineRe, $idOffre);
+            }
+        }
+        header('location:'.base_url().'Offres/Index');
+    }
+    protected function Delete_Offer() {
+
+        $Identifiant = $this->input->post('Identifiant');
+        $MDP = $this->input->post('MDP');
+
+        if ($this->Model_Offres->check_logins_for_delete($Identifiant, $MDP, $this->idEntreprise)) {
+
+            $idOffreConfirm = $this->input->post('idOffreConfirm');
+            $this->Model_Offres->delete_domain_by_idOffer($idOffreConfirm);
+            $this->Model_Offres->delete_offer_by_id($idOffreConfirm);
+            header('location:'.base_url().'Offres/Index');
+        }
+        else {
+            $this->errorOf = 'Vos Identifiants ne sont pas valides.';
+            $this->Affichage_Mes_Offres();
+        }
     }
 
 }
