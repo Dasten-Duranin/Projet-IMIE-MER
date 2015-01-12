@@ -56,7 +56,7 @@
                     <a href="idoffre"><img src="'.base_url().'\Public\img\Interface\visualiser.png" alt="Visualiser l\'offre" title="Visualiser l\'offre" class="visualiser" /></a>
                 </td>
                 <td class="ListOffer">
-                    <img src="'.base_url().'\Public\img\Interface\Modif.png" alt="Modifier l\'offre" title="Modifier l\'offre" class="submitmodifier" />
+                    <a href="'.base_url().'Offres/Index?idOffreModif='.$Offre->idOffre.'"><img src="'.base_url().'\Public\img\Interface\Modif.png" alt="Modifier l\'offre" title="Modifier l\'offre" class="submitmodifier" /></a>
                 </td>
                 <td class="ListOffer">
                     <img src="'.base_url().'\Public\img\Interface\DelOFfre.png" alt="Supprimer l\'offre" title="Supprimer l\'offre" class="submitdel" id="OffreNumber'.$Offre->idOffre.'"/>
@@ -87,6 +87,13 @@
         <input id="CancelDelete" name="ConfirmDel" type="submit" value="Annuler">
     </div>
 </section>
+<?php
+if ($idOffreModif != FALSE) {
+    echo 'test';
+    echo $idOffreModif;
+}
+
+?>
 <img src="<?php echo base_url();?>\Public\img\Interface\createOffer.png" alt="Créer une Offre d'emploi" title="Créer une Offre d'emploi" id="CreateOffer" />
 <section id="NewOffre">
     <div class="Formulaire clear">

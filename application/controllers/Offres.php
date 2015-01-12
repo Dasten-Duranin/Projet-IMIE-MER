@@ -8,6 +8,7 @@ class Offres extends CI_controller {
     protected $idAdresse;
     protected $idEleve;
     protected $idEntreprise;
+    protected $idOffreModif;
 
     public function __construct () {
         parent::__construct();
@@ -34,6 +35,7 @@ class Offres extends CI_controller {
                     $this->idEntreprise = $ids->idEntreprise;
                     $ConfirmDel = $this->input->post('ConfirmDel');
                     $SubmitOffre = $this->input->post('SubmitOffre');
+                    $this->idOffreModif = $this->input->get('idOffreModif');
 
                     if ($ConfirmDel != FALSE) {
                         $this->Delete_Offer();
@@ -94,6 +96,7 @@ class Offres extends CI_controller {
         $login = $this->session->userdata('user_input');
 
         $data['errorOf'] =$this->errorOf;
+        $data['idOffreModif'] =$this->idOffreModif;
 
         $data['Offres'] = $this->Model_Offres->Offres_by_idEntreprises($this->idEntreprise);
         $data['liste_domaine_developpement']=$this->Model_Offres->liste_domaine_developpement();
