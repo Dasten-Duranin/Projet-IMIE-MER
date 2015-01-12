@@ -4,6 +4,8 @@ function initialisation (TypeDomaine) {
 
     $('.DomaineDevOf .SubDel:first').css({'display' : 'none'});
     $('.DomaineResOf .SubDel:first').css({'display' : 'none'});
+    $('.DomaineDevModifOf .SubDel:first').css({'display' : 'none'});
+    $('.DomaineResModifOf .SubDel:first').css({'display' : 'none'});
     start();
 
 };
@@ -27,7 +29,7 @@ function start () {
     });
 
     $('#CancelDelete').click (function() {
-        
+
         $('#confirmArea').css({'display' : 'None'});
 
     });
@@ -48,6 +50,20 @@ function start () {
         }
 
         if ($(this)[0].id == 'DomaineResOf') {
+
+            TypeDomaine= $(this)[0].id;
+            addDomaine(TypeDomaine);
+
+        }
+
+        if ($(this)[0].id == 'DomaineDevModifOf') {
+
+            TypeDomaine= $(this)[0].id;
+            addDomaine(TypeDomaine);
+
+        }
+
+        if ($(this)[0].id == 'DomaineResModifOf') {
 
             TypeDomaine= $(this)[0].id;
             addDomaine(TypeDomaine);

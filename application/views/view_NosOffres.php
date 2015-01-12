@@ -88,11 +88,118 @@
     </div>
 </section>
 <?php
-if ($idOffreModif != FALSE) {
-    echo 'test';
-    echo $idOffreModif;
-}
-
+    if(isset($OffreById)) {
+        echo '
+            <section id="ModifOffre">
+                <div class="Formulaire clear">
+                    <form method="POST">
+                        <aside id="FormModifLeftEn">
+                            <table id="FormDetails">
+                                <caption><h2>Modification de l\'offre : '.$OffreById->TitreOffre.'</h2></caption>
+                                <tbody>
+                                    <tr>
+                                        <td><label for="TitreOffre">Titre de l\'Offre :</label></td>
+                                        <td><input class="Details" type="text" name="TitreOffre" value="'.$OffreById->TitreOffre.'" ></input></td>
+                                    </tr>
+                                    <tr>
+                                        <td><label for="DescriptifOffre">Déscription :</label></td>
+                                        <td><textarea class="Details" name="DescriptifOffre" rows="10" cols="50" required>'.$OffreById->DescriptifOffre.'</textarea></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <input name="SubmitModifOffre" type="submit" id="SubmitModifOffre" value="Valider">
+                        </aside>
+                        <aside id="FormModifRightEn">
+                            <table>
+                                <tbody>
+                                    <caption class="Right"><h3>Type d\'Offre :</h3></caption>
+                                    <tr>
+                                        <td>
+                                            <input type="checkbox" name="StageOffre" value="1" ';if ($OffreById->StageOffre == 1) { echo 'checked';} echo' >Un Stage<br>
+                                            <input type="checkbox" name="AlternanceOffre" value="1" ';if ($OffreById->AlternanceOffre == 1) { echo 'checked';} echo' >Une Alternance<br>
+                                            <input type="checkbox" name="EmploiOffre" value="1" ';if ($OffreById->EmploiOffre == 1) { echo 'checked';} echo' >Un emploi
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <table id="FormDomaines">
+                                <tbody>
+                                    <caption class="Right"><h3>Quelles compétances cherchez vous ?</h3></caption>';
+                                    if ($domaines_dev != FALSE) {
+                                        foreach ($domaines_dev as $domaine_dev) { echo '
+                                            <tr class="DomaineDevModifOf">
+                                                <td><label for="DomaineDevModifOf">Domaine de Dév :</label></td>
+                                                <td>
+                                                    <select name="DomaineDevModifOf[]">
+                                                        <option value="0"> Selectionner </option>';
+                                                        foreach ($liste_domaine_developpement as $domaine_developpement) {
+                                                            echo '<option value="'.$domaine_developpement->idDomaine.'"'; if ($domaine_dev->Domaine == $domaine_developpement->Domaine) {echo 'selected="selected"';} echo '>'.$domaine_developpement->Domaine.'</option>';
+                                                        }
+                                                        echo '
+                                                    </select><img class="SubDel" src="'.base_url().'Public/img/Interface/DelDomaine.png" title="Supprimer un domaine" alt="Supprimer un domaine" width="20px" height="20px" />
+                                                </td>
+                                            </tr>';
+                                        }
+                                    }
+                                    else { echo '
+                                        <tr class="DomaineDevModifOf">
+                                            <td><label for="DomaineDevModifOf">Domaine de Dév :</label></td>
+                                            <td>
+                                                <select name="DomaineDevModifOf[]">
+                                                    <option value="0"> Selectionner </option>';
+                                                    foreach ($liste_domaine_developpement as $domaine_developpement) {
+                                                        echo '<option value="'.$domaine_developpement->idDomaine.'">'.$domaine_developpement->Domaine.'</option>';
+                                                    }
+                                                    echo '
+                                                </select><img class="SubDel" src="'.base_url().'Public/img/Interface/DelDomaine.png" title="Supprimer un domaine" alt="Supprimer un domaine" width="20px" height="20px" />
+                                            </td>
+                                        </tr>';
+                                    }
+                                    echo '
+                                    <tr>
+                                        <td><img src="'.base_url().'Public/img/Interface/addDomaine.png" title="Ajouter un Domaine en Developpement" alt="Ajouter un Domaine en Developpement" class="AddDomaine" id="DomaineDevModifOf" /></td>
+                                    </tr>';
+                                    if ($domaines_res != FALSE) {
+                                        foreach ($domaines_res as $domaine_res) { echo '
+                                            <tr class="DomaineResModifOf">
+                                                <td><label for="DomaineResModifOf">Domaine de Réseau :</label></td>
+                                                <td>
+                                                    <select name="DomaineResModifOf[]">
+                                                        <option value="0"> Selectionner </option>';
+                                                        foreach ($liste_domaine_reseau as $domaine_reseau) {
+                                                            echo '<option value="'.$domaine_reseau->idDomaine.'"'; if ($domaine_res->Domaine == $domaine_reseau->Domaine) {echo 'selected="selected"';} echo '>'.$domaine_reseau->Domaine.'</option>';
+                                                        }
+                                                        echo '
+                                                    </select><img class="SubDel" src="'.base_url().'Public/img/Interface/DelDomaine.png" title="Supprimer un domaine" alt="Supprimer un domaine" width="20px" height="20px" />
+                                                </td>
+                                            </tr>';
+                                        }
+                                    }
+                                    else { echo '
+                                        <tr class="DomaineResModifOf">
+                                            <td><label for="DomaineResModifOf">Domaine de Réseau :</label></td>
+                                            <td>
+                                                <select name="DomaineResModifOf[]">
+                                                    <option value="0"> Selectionner </option>';
+                                                    foreach ($liste_domaine_reseau as $domaine_reseau) {
+                                                        echo '<option value="'.$domaine_reseau->idDomaine.'">'.$domaine_reseau->Domaine.'</option>';
+                                                    }
+                                                    echo '
+                                                </select><img class="SubDel" src="'.base_url().'Public/img/Interface/DelDomaine.png" title="Supprimer un domaine" alt="Supprimer un domaine" width="20px" height="20px" />
+                                            </td>
+                                        </tr>';
+                                    } echo '
+                                    <tr>
+                                        <td><img src="'.base_url().'Public/img/Interface/addDomaine.png" title="Ajouter un Domaine en reseau" alt="Ajouter un Domaine en reseau" class="AddDomaine" id="DomaineResModifOf" /></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </aside>
+                    </form>
+                </div>
+            </section>
+        ';
+    }
 ?>
 <img src="<?php echo base_url();?>\Public\img\Interface\createOffer.png" alt="Créer une Offre d'emploi" title="Créer une Offre d'emploi" id="CreateOffer" />
 <section id="NewOffre">
@@ -101,7 +208,7 @@ if ($idOffreModif != FALSE) {
         <form method="POST">
             <aside id="FormLeftEn">
                 <table id="FormDetails">
-                    <caption><h2>Détails de votre offre</h2></caption>
+                    <caption><h2>Créez votre offre.</h2></caption>
                     <tbody>
                         <tr>
                             <td><label for="TitreOffre">Titre de l'Offre :</label></td>

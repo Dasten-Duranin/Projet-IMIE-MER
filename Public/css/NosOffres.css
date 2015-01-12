@@ -90,9 +90,9 @@ div#errorOf {
     left: 200px;
     top: 105px;
     }
-    /********************************/
-    /***CSS de la création d'offre***/
-    /********************************/
+    /****************************/
+    /***CSS Bouton new d'offre***/
+    /****************************/
 
 #CreateOffer {
     background-color: #57bc74;
@@ -113,9 +113,9 @@ div#errorOf {
     -webkit-box-shadow: 0 0px 0px #333333;
     box-shadow: 0 0px 0px #333333;}
 
-    /******************/
-    /**CSS Formulaire**/
-    /******************/
+    /*****************/
+    /**CSS New Offre**/
+    /*****************/
 
 #NewOffre {
     margin-top: 50px;
@@ -139,6 +139,38 @@ div#errorOf {
     left: 250px;}
 
 #FormRightEn {
+    position: relative;
+    float: right;}
+
+caption.Right {
+    width: 275px;}
+
+
+    /*******************/
+    /**CSS Modif Offre**/
+    /*******************/
+
+#ModifOffre {
+    margin-top: 50px;
+    width: 900px;
+    margin-right: auto;
+    margin-left: auto;}
+
+#FormModifLeftEn {
+    position: relative;
+    float: left;}
+
+.Details {
+    width: 475px;
+    max-width: 500px;}
+
+#SubmitModifOffre {
+    width: 150px;
+    height: 50px;
+    position: relative;
+    left: 250px;}
+
+#FormModifRightEn {
     position: relative;
     float: right;}
 

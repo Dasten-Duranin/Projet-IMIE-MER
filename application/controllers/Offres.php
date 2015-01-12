@@ -35,13 +35,16 @@ class Offres extends CI_controller {
                     $this->idEntreprise = $ids->idEntreprise;
                     $ConfirmDel = $this->input->post('ConfirmDel');
                     $SubmitOffre = $this->input->post('SubmitOffre');
-                    $this->idOffreModif = $this->input->get('idOffreModif');
+                    $SubmitModifOffre = $this->input->post('SubmitModifOffre');
 
                     if ($ConfirmDel != FALSE) {
                         $this->Delete_Offer();
                     }
                     else if ($SubmitOffre != FALSE) {
                         $this->Offer_Creation();
+                    }
+                    else if ($SubmitModifOffre != FALSE){
+                        $this->Offer_Modification();
                     }
                     else {
                         $this->idEntreprise = $ids->idEntreprise;
@@ -96,7 +99,13 @@ class Offres extends CI_controller {
         $login = $this->session->userdata('user_input');
 
         $data['errorOf'] =$this->errorOf;
-        $data['idOffreModif'] =$this->idOffreModif;
+        $this->idOffreModif = $this->input->get('idOffreModif');
+
+        if ($this->idOffreModif != FALSE) {
+            $data['OffreById']=$this->Model_Offres->select_offre_by_id($this->idOffreModif, $this->idEntreprise);
+            $data['domaines_dev'] = $this->Model_Offres->domaines_developpement_by_offre($this->idOffreModif);
+            $data['domaines_res'] = $this->Model_Offres->domaines_reseau_by_offre($this->idOffreModif);
+        }
 
         $data['Offres'] = $this->Model_Offres->Offres_by_idEntreprises($this->idEntreprise);
         $data['liste_domaine_developpement']=$this->Model_Offres->liste_domaine_developpement();
@@ -156,6 +165,40 @@ class Offres extends CI_controller {
             $this->errorOf = 'Vos Identifiants ne sont pas valides.';
             $this->Affichage_Mes_Offres();
         }
+    }
+    protected function Offer_Modification() {
+
+        $this->idOffreModif = $this->input->get('idOffreModif');
+
+        $TitreOffre = $this->input->post('TitreOffre');
+        $DescriptifOffre = $this->input->post('DescriptifOffre');
+        $StageOffre = $this->input->post('StageOffre');
+        $AlternanceOffre = $this->input->post('AlternanceOffre');
+        $EmploiOffre = $this->input->post('EmploiOffre');
+
+        if ($StageOffre != FALSE) {$StageOffre=1;} else {$StageOffre=0;}
+        if ($AlternanceOffre != FALSE) {$AlternanceOffre=1;} else {$AlternanceOffre=0;}
+        if ($EmploiOffre != FALSE) {$EmploiOffre=1;} else {$EmploiOffre=0;}
+
+        $this->Model_Offres->update_offre($TitreOffre, $DescriptifOffre, $StageOffre, $AlternanceOffre, $EmploiOffre, $this->idOffreModif);
+
+        $DomaineDevModifOf = $this->input->post('DomaineDevModifOf');
+        $DomaineResModifOf = $this->input->post('DomaineResModifOf');
+
+        $this->Model_Offres->delete_domaines_offre($this->idOffreModif);
+
+        foreach( $DomaineDevModifOf as $DomaineDe ) {
+            if ($DomaineDe != 0) {
+                $this->Model_Offres->insert_domaine_offres($DomaineDe, $this->idOffreModif);
+            }
+        }
+        foreach( $DomaineResModifOf as $DomaineRe ) {
+            if ($DomaineRe != 0) {
+                $this->Model_Offres->insert_domaine_offres($DomaineRe, $this->idOffreModif);
+            }
+        }
+        header('location:'.base_url().'Offres/Index');
+
     }
 
 }
