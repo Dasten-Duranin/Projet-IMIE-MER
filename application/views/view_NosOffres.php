@@ -53,7 +53,7 @@
                     if ($Offre->EmploiOffre == 1) {echo '<img src="'.base_url().'\Public\img\Interface\Tick.png" alt="Modifier l\'offre" title="Modifier l\'offre" class="tickinfo" />';}  echo '
                 </td>
                 <td class="ListOffer">
-                    <a href="idoffre"><img src="'.base_url().'\Public\img\Interface\visualiser.png" alt="Visualiser l\'offre" title="Visualiser l\'offre" class="visualiser" /></a>
+                    <a href="'.base_url().'DetailsOffre/Index?idOffre='.$Offre->idOffre.'"><img src="'.base_url().'\Public\img\Interface\visualiser.png" alt="Visualiser l\'offre" title="Visualiser l\'offre" class="visualiser" /></a>
                 </td>
                 <td class="ListOffer">
                     <a href="'.base_url().'Offres/Index?idOffreModif='.$Offre->idOffre.'"><img src="'.base_url().'\Public\img\Interface\Modif.png" alt="Modifier l\'offre" title="Modifier l\'offre" class="submitmodifier" /></a>

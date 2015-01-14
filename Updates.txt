@@ -1,4 +1,5 @@
 Update du 12/01/2015
+Modification des offres fonctionnelle.
 Ajout du pannel de gestion des offres d'emploi des entreprises.
 Ajout de la possibilité de supprimer une offre, 
 fonctionnélitée de suppression protégée par la demande des identifiants.

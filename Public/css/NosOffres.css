@@ -43,7 +43,8 @@ thead.ListOffer {
     height: 25px;}
 
 .submitdel {
-    height: 25px;}
+    height: 25px;
+    cursor:pointer;}
 
 div#errorOf {
     margin-left: 25px;}

@@ -1,0 +1,84 @@
+section {
+    margin-top: 40px;
+    width: 900px;
+    margin-left: auto;
+    margin-right: auto;}
+
+
+#TitreOffre {
+    font-size: 1.75em;
+    width: 550px;
+    height: 55px;
+    border: 1px solid black;
+    -moz-box-shadow: 0 1px 1px #333333;
+    -webkit-box-shadow: 0 1px 1px #333333;
+    box-shadow: 0 1px 1px #333333;
+    border-radius: 0.5em;
+    -webkit-border-radius: 0.5em;
+    -moz-border-radius:0.5em;
+    text-align: center;
+    float: right;
+    margin-right: 100px;
+    margin-top: 25px;}
+
+#Coords {
+    position: relative;
+    float: left;}
+
+#Details {
+    width: 700px;
+    position: relative;
+    float: left;}
+
+#Descriptif {
+    width: 600px;
+    position: relative;
+    left: 75px;
+    border: 1px solid black;
+    -moz-box-shadow: 0 1px 1px #333333;
+    -webkit-box-shadow: 0 1px 1px #333333;
+    box-shadow: 0 1px 1px #333333;
+    border-radius: 0.5em;
+    -webkit-border-radius: 0.5em;
+    -moz-border-radius:0.5em;}
+
+#Recherche {
+    position: relative;
+    left: 40px;
+    margin-top: 25px;}
+
+.BoutonRecherche1 {
+    background-color: #57bc74;
+    border: 1px solid black;
+    -moz-box-shadow: 0 1px 1px #333333;
+    -webkit-box-shadow: 0 1px 1px #333333;
+    box-shadow: 0 1px 1px #333333;
+    border-radius: 0.5em;
+    -webkit-border-radius: 0.5em;
+    -moz-border-radius:0.5em;
+    margin-left: 15px;
+    width: 200px;
+    height: 50px;}
+
+.BoutonRecherche0 {
+    background-color: #ee3124;
+    border: 1px solid black;
+    -moz-box-shadow: 0 1px 1px #333333;
+    -webkit-box-shadow: 0 1px 1px #333333;
+    box-shadow: 0 1px 1px #333333;
+    border-radius: 0.5em;
+    -webkit-border-radius: 0.5em;
+    -moz-border-radius:0.5em;
+    margin-left: 15px;
+    width: 200px;
+    height: 50px;}
+
+#Domaines {
+    position: relative;
+    top: 25px;
+}
+
+.Domaine {
+    width: 117px;
+    height: 167px;
+    margin-right: 25px;}
