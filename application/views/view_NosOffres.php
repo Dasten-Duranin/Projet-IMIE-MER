@@ -44,22 +44,22 @@
                     '.$Offre->TitreOffre.'
                 </td>
                 <td class="ListOffer">';
-                    if ($Offre->StageOffre == 1) {echo '<img src="'.base_url().'\Public\img\Interface\Tick.png" alt="Modifier l\'offre" title="Modifier l\'offre" class="tickinfo" />';} echo '
+                    if ($Offre->StageOffre == 1) {echo '<img src="'.base_url().'Public/img/Interface/Tick.png" alt="Modifier l\'offre" title="Modifier l\'offre" class="tickinfo" />';} echo '
                 </td>
                 <td class="ListOffer">';
-                    if ($Offre->AlternanceOffre == 1) {echo '<img src="'.base_url().'\Public\img\Interface\Tick.png" alt="Modifier l\'offre" title="Modifier l\'offre" class="tickinfo" />';} echo '
+                    if ($Offre->AlternanceOffre == 1) {echo '<img src="'.base_url().'Public/img/Interface/Tick.png" alt="Modifier l\'offre" title="Modifier l\'offre" class="tickinfo" />';} echo '
                 </td>
                 <td class="ListOffer">';
-                    if ($Offre->EmploiOffre == 1) {echo '<img src="'.base_url().'\Public\img\Interface\Tick.png" alt="Modifier l\'offre" title="Modifier l\'offre" class="tickinfo" />';}  echo '
+                    if ($Offre->EmploiOffre == 1) {echo '<img src="'.base_url().'Public/img/Interface/Tick.png" alt="Modifier l\'offre" title="Modifier l\'offre" class="tickinfo" />';}  echo '
                 </td>
                 <td class="ListOffer">
-                    <a href="'.base_url().'DetailsOffre/Index?idOffre='.$Offre->idOffre.'"><img src="'.base_url().'\Public\img\Interface\visualiser.png" alt="Visualiser l\'offre" title="Visualiser l\'offre" class="visualiser" /></a>
+                    <a href="'.base_url().'DetailsOffre/Index?idOffre='.$Offre->idOffre.'"><img src="'.base_url().'Public/img/Interface/visualiser.png" alt="Visualiser l\'offre" title="Visualiser l\'offre" class="visualiser" /></a>
                 </td>
                 <td class="ListOffer">
-                    <a href="'.base_url().'Offres/Index?idOffreModif='.$Offre->idOffre.'"><img src="'.base_url().'\Public\img\Interface\Modif.png" alt="Modifier l\'offre" title="Modifier l\'offre" class="submitmodifier" /></a>
+                    <a href="'.base_url().'Offres/Index?idOffreModif='.$Offre->idOffre.'"><img src="'.base_url().'Public/img/Interface/Modif.png" alt="Modifier l\'offre" title="Modifier l\'offre" class="submitmodifier" /></a>
                 </td>
                 <td class="ListOffer">
-                    <img src="'.base_url().'\Public\img\Interface\DelOFfre.png" alt="Supprimer l\'offre" title="Supprimer l\'offre" class="submitdel" id="OffreNumber'.$Offre->idOffre.'"/>
+                    <img src="'.base_url().'/Public/img/Interface/DelOFfre.png" alt="Supprimer l\'offre" title="Supprimer l\'offre" class="submitdel" id="OffreNumber'.$Offre->idOffre.'"/>
             </tr> '; $i=$i+1;}?>
         </tbody>
     </table>
@@ -201,7 +201,7 @@
         ';
     }
 ?>
-<img src="<?php echo base_url();?>\Public\img\Interface\createOffer.png" alt="Créer une Offre d'emploi" title="Créer une Offre d'emploi" id="CreateOffer" />
+<img src="<?php echo base_url();?>Public/img/Interface/createOffer.png" alt="Créer une Offre d'emploi" title="Créer une Offre d'emploi" id="CreateOffer" />
 <section id="NewOffre">
     <div class="Formulaire clear">
         <?php if(isset($errorEn)) {echo '<div id="ErrorMesOffres">'.$errorOf.'</div>';} ?>

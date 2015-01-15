@@ -72,17 +72,14 @@
 
                 $data['Offre']=$Offre;
                 $data['domaines_offre'] = $this->Model_DetailsOffre->domaine_by_offre($idOffre);
-                $this->load->view('view_Template_head',$inclusions);
-                $this->load->view('view_DetailsOffre',$data);
-                $this->load->view('view_Template_footer');
             }
             else {
-
-                $this->load->view('view_Template_head',$inclusions);
-                echo '<section>Vous n\'avez actuellement pas d\'offre avec une telle ID.</section>';
-                $this->load->view('view_Template_footer');
-
+                $data['error']='<section>Désolé Vous n\'avez pas créer d\'offre avec une telle ID</section>';
             }
+
+            $this->load->view('view_Template_head',$inclusions);
+            $this->load->view('view_DetailsOffre',$data);
+            $this->load->view('view_Template_footer');
 
         }
     }
