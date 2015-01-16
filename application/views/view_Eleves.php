@@ -41,7 +41,7 @@
                 echo '
                 <article class="Eleve">
                     <div class="InfosEleve">
-                        <a href="'.base_url().'ProfilEleve/Affichage?idEleve='.$eleve->idEleve.'">
+                        <a href="'.base_url().'Profil/Index?idEleve='.$eleve->idEleve.'">
                             <img src="'; if($eleve->PhotoProfil != FALSE) {echo $eleve->PhotoProfil;} else {echo base_url().'Public/img/Defaut_Photo_Profile.png';}
                             echo '" width="105" height="135" />
                         </a>

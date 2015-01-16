@@ -1,0 +1,72 @@
+.PhotoProfil{
+	width: 30%;
+	position: relative;
+	margin-left: 10%;
+}
+
+#logoProfil{
+	float: left;
+}
+
+.information{
+	margin-bottom: 13%;
+}
+
+.information2{
+float: left;
+margin-left: 10%;
+
+}
+
+.descriptif{
+	border: 1px solid black;
+    border-radius: 0.5em;
+    -webkit-border-radius: 0.5em;
+    -moz-border-radius:0.5em;
+	height : 50%;
+	margin-left: 27%;
+	margin-right: 5%;
+	margin-bottom: 5%;
+	padding: 3%;
+	text-align: center;
+}
+
+.choix{
+	border: 1px solid black;
+	text-align: center;
+	border-radius: 0.5em;
+    -webkit-border-radius: 0.5em;
+    -moz-border-radius:0.5em;
+
+}
+
+#stagiaire{
+	float: left;
+	margin-left: 30%;
+	margin-right: 10%;
+	padding: 2%;
+}
+
+#alternant{
+	float: left;
+	margin-right: 10%;
+	padding: 2%;
+}
+
+#emploi{
+	float: left;
+	margin-bottom: 10%;
+	padding: 2%;
+	
+}
+
+#logoDev{
+	margin-right: 10%;
+	margin-left: 10%;
+}
+
+
+
+
+
+
