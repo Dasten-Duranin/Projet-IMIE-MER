@@ -1,36 +1,33 @@
-<section>
-    <div>
-        <div class="PhotoProfil">
-            <img src="<?php if($entreprise->LogoEntreprise != FALSE) {echo $entreprise->LogoEntreprise;} else {echo base_url().'Public/img/Defaut_Logo_Entreprise.png';} ?>" id="logoProfil" title="Logo de l'entreprise" alt="Logo de l'entreprise" width="200" height="133">
+<section class="clear">
+    <div id="Titres" class="clear">
+        <img src="<?php if($entreprise->LogoEntreprise != FALSE) {echo $entreprise->LogoEntreprise;} else {echo base_url().'Public/img/Defaut_Logo_Entreprise.png';} ?>" width="200" height="133" />
+        <aside id="TitreEntreprise">
+            <span><?php echo $entreprise->NomEntreprise ?></span>
+        </aside>
+    <div class="clear">
+        <div class="clear" id="Coords">
+            <p id="Adresses">Adresse :<br>
+                <?php echo $entreprise->NumVoie.' '.$entreprise->TypeVoie.' '.$entreprise->NomVoie.'<br>'.
+                $entreprise->Ville.',<br>'.
+                $entreprise->CP.', '.$entreprise->Pays.'<br>
+                Adresse Email :<br>'.
+                $entreprise->EmailEntreprise.'<br>'; ?>
+            </p>
         </div>
-        <div class="information">
-            <?php echo $entreprise->NomEntreprise; ?><br>
-            <?php echo $entreprise->EmailEntreprise; ?><br> Distance entre l'école <br> et l'entreprise
-        </div>
-        <div class="information2">
-            Email : <br> Téléphone |  Fax <br> Adresse
-        </div>
-    </div>
-
-    <div>
-        <div class="descriptif">
-            <?php echo $entreprise->DescriptifEntreprise; ?>
-        </div>
-        <div>
-            <div class="choix" id="stagiaire">
-                Recherche Stagiaire
-            </div>
-            <div class="choix" id="alternant">
-                Recherche Alternant
-            </div>
-            <div class="choix" id="emploi">
-                Emploi
+        <div class="clear" id="Details">
+            <div id="Descriptif"><?php echo nl2br($entreprise->DescriptifEntreprise)?></div>
+            <div class="clear" id="Recherche">
+                <img class="BoutonRecherche<?php echo $entreprise->Stagiaire; ?>" src="<?php echo base_url(); ?>Public/img/Interface/Stage.png" title="Recherche de Stage" alt="recherche de Stage" />
+                <img class="BoutonRecherche<?php echo $entreprise->Alternant; ?>" src="<?php echo base_url(); ?>Public/img/Interface/Alternance.png" title="Recherche d\'alternance" alt="recherche d\'alternance" />
+                <img class="BoutonRecherche<?php echo $entreprise->Employe; ?>" src="<?php echo base_url(); ?>Public/img/Interface/Emploi.png" title="Recherche d\'Emploi" alt="recherche d\'Emploi" />
             </div>
         </div>
     </div>
-
-    <div>
-      <img src="img/Sebastien.jpg" id="logoDev" width="135" height="200">
-      <img src="img/Moi.jpg" id="logoRes" width="135" height="200">
+    <div class="clear" id="Domaines">
+        <?php
+            foreach ($domaines_entreprise as $domaine) {
+                echo '<img src="'.base_url().''.$domaine->logoDomaine.'" title="Domaine '.$domaine->Domaine.'" alt="Domaine '.$domaine->Domaine.'" class="Domaine" />';
+            }
+        ?>
     </div>
 </section>

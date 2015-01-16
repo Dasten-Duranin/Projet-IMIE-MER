@@ -18,8 +18,15 @@ class Profil extends CI_controller {
             $login = $this->session->userdata('user_input');
 
             if ($this->Model_Profil->check_login($login)) {
+                $this->idEleve = $this->input->get('idEleve');
+                $this->idEntreprise = $this->input->get('idEntreprise');
 
-                $this->Affichage_Eleve();
+                if ($this->idEleve != FALSE) {
+                    $this->Affichage_Eleve();
+                }
+                else if ($this->idEntreprise != FALSE) {
+                    $this->Affichage_Entreprise();
+                }
             }
             else {
                 header('location:'.base_url().'ProfilEleve/Deconnexion');
@@ -65,7 +72,8 @@ class Profil extends CI_controller {
                     $this->Affichage_Entreprise();
                 }
                 else if ($ids->idEleve != FALSE) {
-                    header('location:'.base_url().'ProfilEleve/Affichage?idEleve='.$ids->idEleve);
+                    $this->idEleve = $ids->idEleve;
+                    $this->Affichage_Entreprise();
                 }
                 else {
                     echo 'Bonjour Administrateur, cette section n\'est pas encore construite';
@@ -82,7 +90,7 @@ class Profil extends CI_controller {
     protected function Affichage_Entreprise() {
 
         $data['entreprise'] = $this->Model_Profil->entreprise_by_id($this->idEntreprise);
-        $data['domaines'] = $this->Model_Profil->domaine_by_entreprise($this->idEntreprise);
+        $data['domaines_entreprise'] = $this->Model_Profil->domaine_by_entreprise($this->idEntreprise);
 
         $inclusions['welcome']='<p>Bonjour, vous êtes connectés</p> <p>en tant que '.$this->session->userdata('user_input').'</p>';
         $inclusions['inclusions']='<link rel="stylesheet" media="all" type"text/css" href="'.base_url().'Public/css/ProfilEntreprise.css"/>
@@ -95,12 +103,11 @@ class Profil extends CI_controller {
     }
     protected function Affichage_Eleve() {
 
-        $idEleve = $this->input->get('idEleve');
-        $eleve = $this->Model_Profil->eleve_by_id($idEleve);
+        $eleve = $this->Model_Profil->eleve_by_id($this->idEleve);
         $idAdresse = $eleve->idAdresse;
         $data['eleve'] = $eleve;
         $data['adresse'] = $this->Model_Profil->adresse_by_id($idAdresse);
-        $data['domaines'] = $this->Model_Profil->domaine_by_eleve($idEleve);
+        $data['domaines'] = $this->Model_Profil->domaine_by_eleve($this->idEleve);
 
         $inclusions['welcome']='<p>Bonjour, vous êtes connectés</p> <p>en tant que '.$this->session->userdata('user_input').'</p>';
         $inclusions['inclusions']='<link rel="stylesheet" media="all" type"text/css" href="'.base_url().'Public/css/ProfilEleve.css"/>

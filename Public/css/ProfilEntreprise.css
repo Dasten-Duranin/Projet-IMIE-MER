@@ -1,72 +1,89 @@
-.PhotoProfil{
-	width: 30%;
-	position: relative;
-	margin-left: 10%;
-}
+section {
+	margin-top: 40px;
+	width: 900px;
+	margin-left: auto;
+	margin-right: auto;}
 
-#logoProfil{
-	float: left;
-}
-
-.information{
-	margin-bottom: 13%;
-}
-
-.information2{
-float: left;
-margin-left: 10%;
-
-}
-
-.descriptif{
+#TitreEntreprise {
+	font-size: 1.75em;
+	width: 550px;
+	height: 55px;
 	border: 1px solid black;
-    border-radius: 0.5em;
-    -webkit-border-radius: 0.5em;
-    -moz-border-radius:0.5em;
-	height : 50%;
-	margin-left: 27%;
-	margin-right: 5%;
-	margin-bottom: 5%;
-	padding: 3%;
-	text-align: center;
-}
-
-.choix{
-	border: 1px solid black;
-	text-align: center;
+	-moz-box-shadow: 0 1px 1px #333333;
+	-webkit-box-shadow: 0 1px 1px #333333;
+	box-shadow: 0 1px 1px #333333;
 	border-radius: 0.5em;
-    -webkit-border-radius: 0.5em;
-    -moz-border-radius:0.5em;
+	-webkit-border-radius: 0.5em;
+	-moz-border-radius:0.5em;
+	text-align: center;
+	float: right;
+	margin-right: 100px;
+	margin-top: 25px;}
 
-}
-
-#stagiaire{
+#Coords {
+	position: relative;
 	float: left;
-	margin-left: 30%;
-	margin-right: 10%;
-	padding: 2%;
-}
+	width: 200px;}
 
-#alternant{
-	float: left;
-	margin-right: 10%;
-	padding: 2%;
-}
+#Adresses {
+	line-height: 1.5em;
+	font-size: 1.125em;}
 
-#emploi{
-	float: left;
-	margin-bottom: 10%;
-	padding: 2%;
-	
-}
+#Details {
+	width: 700px;
+	position: relative;
+	float: left;}
 
-#logoDev{
-	margin-right: 10%;
-	margin-left: 10%;
-}
+#Descriptif {
+	width: 600px;
+	position: relative;
+	top: -25px;
+	left: 24px;
+	padding: 5px 5px 5px;
+	border: 1px solid black;
+	-moz-box-shadow: 0 1px 1px #333333;
+	-webkit-box-shadow: 0 1px 1px #333333;
+	box-shadow: 0 1px 1px #333333;
+	border-radius: 0.5em;
+	-webkit-border-radius: 0.5em;
+	-moz-border-radius:0.5em;}
 
+#Recherche {
+	position: relative;
+	left: -5px;}
 
+.BoutonRecherche1 {
+	background-color: #57bc74;
+	border: 1px solid black;
+	-moz-box-shadow: 0 1px 1px #333333;
+	-webkit-box-shadow: 0 1px 1px #333333;
+	box-shadow: 0 1px 1px #333333;
+	border-radius: 0.5em;
+	-webkit-border-radius: 0.5em;
+	-moz-border-radius:0.5em;
+	margin-left: 15px;
+	width: 200px;
+	height: 50px;}
 
+.BoutonRecherche0 {
+	background-color: #ee3124;
+	border: 1px solid black;
+	-moz-box-shadow: 0 1px 1px #333333;
+	-webkit-box-shadow: 0 1px 1px #333333;
+	box-shadow: 0 1px 1px #333333;
+	border-radius: 0.5em;
+	-webkit-border-radius: 0.5em;
+	-moz-border-radius:0.5em;
+	margin-left: 15px;
+	width: 200px;
+	height: 50px;}
 
+#Domaines {
+	margin-top: 25px;
+	margin-left: 50px;
+	margin-bottom: 25px;}
 
-
+.Domaine {
+	width: 117px;
+	height: 167px;
+	margin-right: 25px;}
