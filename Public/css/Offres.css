@@ -1,0 +1,99 @@
+.BoutonTypeDomaine {
+    border-radius: 1em;
+    -webkit-border-radius: 1em;
+    -moz-border-radius:1em;
+    -moz-box-shadow: 0 1px 1px #333333;
+    -webkit-box-shadow: 0 1px 1px #333333;
+    box-shadow: 0 1px 1px #333333;
+    background-color: #57bc74;
+    position:relative;
+    right: -25%;}
+
+#Developpement {
+    float:right;
+    left : 35%;
+    margin-bottom: 10px;}
+
+#Filtre {
+    background-color: #e2e2e2;
+    width: 150px;
+    float: left;
+    margin: 15px 15px;
+    padding: 5px 5px;
+    -moz-box-shadow: 0 1px 1px #333333;
+    -webkit-box-shadow: 0 1px 1px #333333;}
+
+#Filtre * {
+    margin: 15px 5px;}
+
+.FiltreVille {
+    width: 100px;}
+
+.Offre {
+    ligne-height: 0px;
+    position: relative;
+    width: 700px;
+    height: 200px;
+    background-color: #49b9bd;
+    float: right;
+    margin-right: 35px;
+    margin-top: 25px;
+    border-radius: 0.5em;
+    -webkit-border-radius: 0.5em;
+    -moz-border-radius:0.5em;
+    overflow: hidden;}
+
+.DomaineOffres {
+    background-color: #57bc74;
+    width: 125px;
+    height: 200px;
+    border-top-right-radius: 0.5em;
+    -webkit-border-top-right-radius: 0.5em;
+    -moz-border-top-right-radius:0.5em;
+    border-bottom-right-radius: 0.5em;
+    -webkit-border-bottom-right-radius: 0.5em;
+    -moz-border-bottom-right-radius:0.5em;
+    float: right;}
+
+.DomaineOffres ul {
+    float: left;
+    list-style-type: none;
+    padding: 5px 5px;
+    margin: 5px 5px;}
+
+.Coords {
+    width: 175px;
+    height: 200px;
+    float: left;}
+
+.NomEntreprise {
+    text-align: center;
+    font-size: 1.5em;}
+
+.LogoEntreprise {
+    position: absolute;
+    float: left;
+    bottom: 0px;}
+
+.MiddleOffre {
+    width: 399px;
+    height: 200px;
+    float: left;
+    border-right: 1px solid black;}
+
+div.TitreOFfre {
+    border-bottom: 1px solid black;
+    border-left: 1px solid black;}
+
+p.TitreOFfre {
+    text-align: center;
+    padding: 5px 5px 5px;
+    font-size: 1.5em;}
+
+.Adresse {
+    padding: 5px 5px 5px;}
+
+.Descriptif {
+    padding: 5px 5px 5px;
+    font-size: 0.95em;
+    content: "\02026";}

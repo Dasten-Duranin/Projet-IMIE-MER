@@ -73,7 +73,7 @@ class Profil extends CI_controller {
                 }
                 else if ($ids->idEleve != FALSE) {
                     $this->idEleve = $ids->idEleve;
-                    $this->Affichage_Entreprise();
+                    $this->Affichage_Eleve();
                 }
                 else {
                     echo 'Bonjour Administrateur, cette section n\'est pas encore construite';
@@ -93,8 +93,7 @@ class Profil extends CI_controller {
         $data['domaines_entreprise'] = $this->Model_Profil->domaine_by_entreprise($this->idEntreprise);
 
         $inclusions['welcome']='<p>Bonjour, vous êtes connectés</p> <p>en tant que '.$this->session->userdata('user_input').'</p>';
-        $inclusions['inclusions']='<link rel="stylesheet" media="all" type"text/css" href="'.base_url().'Public/css/ProfilEntreprise.css"/>
-        <script type="text/javascript" src="'.base_url().'Public/js/Eleves.js"></script>';
+        $inclusions['inclusions']='<link rel="stylesheet" media="all" type"text/css" href="'.base_url().'Public/css/ProfilEntreprise.css"/>';
 
         $this->load->view('view_Template_head',$inclusions);
         $this->load->view('view_ProfilEntreprise',$data);
@@ -110,8 +109,7 @@ class Profil extends CI_controller {
         $data['domaines'] = $this->Model_Profil->domaine_by_eleve($this->idEleve);
 
         $inclusions['welcome']='<p>Bonjour, vous êtes connectés</p> <p>en tant que '.$this->session->userdata('user_input').'</p>';
-        $inclusions['inclusions']='<link rel="stylesheet" media="all" type"text/css" href="'.base_url().'Public/css/ProfilEleve.css"/>
-        <script type="text/javascript" src="'.base_url().'Public/js/Eleves.js"></script>';
+        $inclusions['inclusions']='<link rel="stylesheet" media="all" type"text/css" href="'.base_url().'Public/css/ProfilEleve.css"/>';
 
         $this->load->view('view_Template_head',$inclusions);
         $this->load->view('view_ProfilEleve',$data);

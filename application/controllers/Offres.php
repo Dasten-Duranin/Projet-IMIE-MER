@@ -87,10 +87,14 @@ class Offres extends CI_controller {
         $login = $this->session->userdata('user_input');
         $data['login'] = $login;
 
-        $inclusions['inclusions']='<link rel="stylesheet" media="all" type"text/css" href="'.base_url().'Public/css/Eleves.css"/>
-        <script type="text/javascript" src="'.base_url().'Public/js/Eleves.js"></script>';
+        $data['liste_offres'] = $this->Model_Offres->liste_offres();
+        $data['liste_domaine_offres'] = $this->Model_Offres->liste_domaine_offres();
+        $data['liste_villes_offres'] = $this->Model_Offres->liste_villes_offres();
+
+        $inclusions['welcome']='<p>Bonjour, vous êtes connectés</p> <p>en tant que '.$login.'</p>';
+        $inclusions['inclusions']='<link rel="stylesheet" media="all" type"text/css" href="'.base_url().'Public/css/Offres.css"/>';
         $this->load->view('view_Template_head',$inclusions);
-        $this->load->view('view_OffresEntreprise',$data);
+        $this->load->view('view_Offres',$data);
         $this->load->view('view_Template_footer');
 
     }

@@ -33,18 +33,45 @@ class Model_Offres extends CI_Model {
         $sql = 'SELECT idEntreprise, idEleve, idUtilisateur FROM utilisateur WHERE Login=?';
         return $this->db->query($sql, array($login))->row();
     }
+    public function liste_domaine_developpement() {
+        $sql = 'SELECT Domaine, idDomaine FROM domaine WHERE TypeDomaine="Developpement"';
+        return $this->db->query($sql)->result();
+    }
+    public function liste_domaine_reseau() {
+        $sql = 'SELECT Domaine, idDomaine FROM domaine WHERE TypeDomaine="Reseau"';
+        return $this->db->query($sql)->result();
+    }
+
+    /***************************/
+    /********Entreprises********/
+    /***************************/
+
     public function Offres_by_idEntreprises($idEntreprise) {
         $sql = 'SELECT * FROM offres WHERE idEntreprise=?';
         return $this->db->query($sql, array($idEntreprise))->result();
     }
 
-    public function liste_domaine_developpement() {
-        $sql = 'SELECT Domaine, idDomaine FROM domaine WHERE TypeDomaine="Developpement"';
+    /**********************/
+    /********Eleves********/
+    /**********************/
+
+    public function liste_villes_offres() {
+        $sql = "SELECT offres.idEntreprise,adresse.Ville,adresse.idAdresse,entreprise.idAdresse,entreprise.idEntreprise FROM offres
+        LEFT JOIN bdd_mer.entreprise ON offres.idEntreprise = entreprise.idEntreprise
+        LEFT JOIN bdd_mer.adresse ON entreprise.idAdresse = adresse.idAdresse
+        GROUP BY Ville";
         return $this->db->query($sql)->result();
     }
-
-    public function liste_domaine_reseau() {
-        $sql = 'SELECT Domaine, idDomaine FROM domaine WHERE TypeDomaine="Reseau"';
+    public function liste_offres() {
+        $sql = "SELECT offres.*,adresse.*,entreprise.* FROM offres
+        LEFT JOIN bdd_mer.entreprise ON offres.idEntreprise = entreprise.idEntreprise
+        LEFT JOIN bdd_mer.adresse ON entreprise.idAdresse = adresse.idAdresse ";
+        return $this->db->query($sql)->result();
+    }
+    public function liste_domaine_offres() {
+        $sql = "SELECT offres.idOffre,demande.*,domaine.Domaine,domaine.idDomaine,domaine.TypeDomaine FROM domaine
+        LEFT JOIN bdd_mer.demande ON domaine.idDomaine = demande.idDomaine
+        LEFT JOIN bdd_mer.offres ON demande.idOffre = offres.idOffre";
         return $this->db->query($sql)->result();
     }
 
