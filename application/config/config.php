@@ -14,7 +14,7 @@
 | path to your installation.
 |
 */
-$config['base_url']	= 'http://localhost/Projet-IMIE-MER';
+$config['base_url']	= 'http://10.0.0.92/Projet-IMIE-MER';
 
 /*
 |--------------------------------------------------------------------------

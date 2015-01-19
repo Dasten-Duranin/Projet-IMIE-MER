@@ -30,12 +30,14 @@ class Accueil extends CI_controller {
     }
     protected function Affichage() {
 
+        $data['eleves'] = $this->Model_Accueil->eleves_random();
+
         $inclusions['welcome']='<p>Bonjour, vous êtes connectés</p> <p>en tant que '.$this->session->userdata('user_input').'</p>';
         $inclusions['inclusions']='<link rel="stylesheet" media="all" type"text/css" href="'.base_url().'Public/css/Accueil.css"/>
         <script type="text/javascript" src="'.base_url().'Public/js/Accueil.js"></script>';
 
         $this->load->view('view_Template_head',$inclusions);
-        $this->load->view('view_Accueil');
+        $this->load->view('view_Accueil',$data);
         $this->load->view('view_Template_footer');
 
     }

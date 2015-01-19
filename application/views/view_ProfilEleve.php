@@ -94,7 +94,7 @@
                 <aside>
                     <div class="clear">
                         <div id="Descriptif">
-                            <span><?php echo $eleve->Descriptif; ?></span>
+                            <span><?php echo nl2br($eleve->Descriptif); ?></span>
                         </div>
                         <div id="Recherche">
                             <img class="BoutonRecherche<?php echo $eleve->Alternance; ?>" src="<?php echo base_url();?>Public/img/Interface/Alternance.png" title="Recherche d'alternance" alt="recherche d'alternance" />

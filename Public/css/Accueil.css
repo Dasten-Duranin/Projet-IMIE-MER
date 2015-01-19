@@ -1,0 +1,24 @@
+
+
+.eleves {
+    margin-top: 50px;}
+
+.eleve {
+    position: relative;
+    float: left;}
+
+.accroche {
+    border: 1px solid black;
+    -moz-box-shadow: 0 1px 1px #333333;
+    -webkit-box-shadow: 0 1px 1px #333333;
+    box-shadow: 0 1px 1px #333333;
+    border-radius: 0.5em;
+    -webkit-border-radius: 0.5em;
+    -moz-border-radius:0.5em;
+    width: 190px;
+    margin-left: 5px;
+    position: relative;
+    bottom: 75px;
+    height: 55px;
+    background-color: white;
+    padding: 5px 5px 5px;}

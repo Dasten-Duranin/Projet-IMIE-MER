@@ -47,7 +47,7 @@
                                 </tr>
                                 <tr>
                                     <td><label for="DescriptifEntreprise">Présentation :</label></td>
-                                    <td><textarea name="DescriptifEntreprise" rows="10" cols="19" required>Tapez votre message</textarea></td>
+                                    <td><textarea name="DescriptifEntreprise" rows="10" cols="19" placeholder="Tapez votre message" required></textarea></td>
                                 </tr>
                             </tbody>
                         </table>
@@ -90,7 +90,7 @@
                                 </tr>
                                 <tr>
                                     <td><label for="Pays">Pays :</label></td>
-                                    <td><input type="text" name="Pays" value="France" ></input></td>
+                                    <td><input type="text" name="Pays" placeholder="France" ></input></td>
                                 </tr>
                             </tbody>
                         </table>
@@ -225,7 +225,7 @@
                                 </tr>
                                 <tr>
                                     <td><label for="Descriptif">Présentation :</label></td>
-                                    <td><textarea name="Descriptif" rows="10" cols="19" required>Tapez votre message</textarea></td>
+                                    <td><textarea name="Descriptif" rows="10" cols="19" placeholder="Tapez votre message" required></textarea></td>
                                 </tr>
                             </tbody>
                         </table>
@@ -268,7 +268,7 @@
                                 </tr>
                                 <tr>
                                     <td><label for="Pays">Pays :</label></td>
-                                    <td><input type="text" name="Pays" value="France" ></input></td>
+                                    <td><input type="text" name="Pays" placeholder="France" ></input></td>
                                 </tr>
                             </tbody>
                         </table>
