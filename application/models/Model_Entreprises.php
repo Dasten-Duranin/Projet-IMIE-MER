@@ -11,8 +11,8 @@
         }
 
         public function liste_entreprises() {
-            $sql = 'SELECT eleve.Nom,eleve.Prenom,eleve.idEleve,eleve.Classe,eleve.PhotoProfil,eleve.Descriptif,adresse.Ville FROM eleve
-            LEFT JOIN bdd_mer.adresse ON eleve.idAdresse = adresse.idAdresse';
+            $sql = "SELECT entreprise.*,adresse.*/*,adresse.*,entreprise.* */FROM entreprise
+                    LEFT JOIN bdd_mer.adresse ON entreprise.idAdresse = adresse.idAdresse ";
             return $this->db->query($sql)->result();
         }
 
@@ -27,8 +27,8 @@
             return $this->db->query($sql)->result();
         }
 
-        public function liste_villes_eleves() {
-            $sql = 'SELECT adresse.Ville,eleve.idAdresse,adresse.idAdresse FROM adresse, eleve WHERE adresse.idAdresse = eleve.idAdresse GROUP BY Ville';
+        public function liste_villes_entreprises() {
+            $sql = 'SELECT adresse.Ville,entreprise.idAdresse,adresse.idAdresse FROM adresse, entreprise WHERE adresse.idAdresse = entreprise.idAdresse GROUP BY Ville';
             return $this->db->query($sql)->result();
         }
 
@@ -36,6 +36,11 @@
             $sql = 'SELECT DISTINCT eleve.Classe FROM eleve';
             return $this->db->query($sql)->result();
         }
+
+       /* public function adresse_entreprise () {
+            $sql= 
+
+        }*/
 
 
     /*

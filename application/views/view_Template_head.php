@@ -18,7 +18,7 @@
             <nav>
                 <ul>
                     <li><a href="<?php echo base_url();?>Eleves/Index" >Élèves</a></li>
-                    <li><a href="#article2" >Entreprises</a></li>
+                    <li><a href="<?php echo base_url();?>Entreprises/Index" >Entreprises</a></li>
                     <li><a href="<?php echo base_url();?>Offres/Index" >Offres</a></li>
                     <li><a href="<?php echo base_url();?>Profil/MonProfil" >Profil</a></li>
                 </ul>

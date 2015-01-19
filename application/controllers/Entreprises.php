@@ -14,7 +14,7 @@
 
                 $login = $this->session->userdata('user_input');
 
-                if ($this->Model_Eleves->check_login($login)) {
+                if ($this->Model_Entreprises->check_login($login)) {
 
                     $this->Affichage();
 
@@ -30,19 +30,24 @@
         }
         protected function Affichage() {
 
-            $this->load->view('view_Entreprises');
+            $data['Entreprises'] = $this->Model_Entreprises->liste_entreprises();
 
-            /*$inclusions['welcome']='<p>Bonjour, vous êtes connectés</p> <p>en tant que '.$this->session->userdata('user_input').'</p>';
+            $inclusions['welcome']='<p>Bonjour, vous êtes connectés</p> <p>en tant que '.$this->session->userdata('user_input').'</p>';
+            $inclusions['inclusions']='<link rel="stylesheet" media="all" type"text/css" href="'.base_url().'Public/css/Entreprises.css"/>
+            <script type="text/javascript" src="'.base_url().'Public/js/Eleves.js"></script>';
+            
+            $this->load->view('view_Template_head',$inclusions);
+            $this->load->view('view_Entreprises',$data);
+            $this->load->view('view_Template_footer');
 
+            /*
             $data['liste_eleves']=$this->Model_Eleves->liste_eleves();
             $data['liste_souhaits']=$this->Model_Eleves->liste_souhaits();
             $data['liste_domaine_eleves']=$this->Model_Eleves->liste_domaine_eleves();
             $data['liste_villes_eleves']=$this->Model_Eleves->liste_villes_eleves();
             $data['liste_classes_eleves']=$this->Model_Eleves->liste_classes_eleves();
 
-            $inclusions['inclusions']='<link rel="stylesheet" media="all" type"text/css" href="'.base_url().'Public/css/Eleves.css"/>
-            <script type="text/javascript" src="'.base_url().'Public/js/Eleves.js"></script>';
-            $this->load->view('view_Template_head',$inclusions);
+            
 
             $this->load->view('view_Eleves',$data);
             $this->load->view('view_Template_footer');*/
