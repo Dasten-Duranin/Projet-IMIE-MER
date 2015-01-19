@@ -1,11 +1,31 @@
 
 
+.ArrowEleve {
+    float: left;
+    height: 228px;
+    margin-top: 40px;}
+
 .eleves {
-    margin-top: 50px;}
+    margin-top: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #57bc74;
+    padding: 5px 5px 5px;
+    width: 810px;
+    -moz-box-shadow: 0 1px 1px #333333;
+    -webkit-box-shadow: 0 1px 1px #333333;
+    box-shadow: 0 1px 1px #333333;}
 
 .eleve {
     position: relative;
-    float: left;}
+    float: left;
+    width: 210px;}
+
+.Names {
+    border: 1px solid black;
+    paddin: 5px 5px 5px;
+    text-align: center;
+}
 
 .accroche {
     border: 1px solid black;
@@ -17,8 +37,8 @@
     -moz-border-radius:0.5em;
     width: 190px;
     margin-left: 5px;
-    position: relative;
-    bottom: 75px;
+    position: absolute;
+    bottom: 9px;
     height: 55px;
     background-color: white;
     padding: 5px 5px 5px;}
