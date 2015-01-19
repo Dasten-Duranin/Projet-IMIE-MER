@@ -11,80 +11,128 @@
 	margin-bottom: 5%;
 }
 
-#page{
-		background-color: #e2e2e2;
+#Developpement {
+    float:right;
+    left : 35%;
+    margin-bottom: 10px;}
+
+#Filtre {
+    background-color: #e2e2e2;
+    width: 150px;
+    float: left;
+    margin: 15px 15px;
+    padding: 5px 5px;
+    -moz-box-shadow: 0 1px 1px #333333;
+    -webkit-box-shadow: 0 1px 1px #333333;}
+
+#Filtre * {
+    margin: 15px 5px;}
+
+.FiltreVille {
+    width: 100px;}
+/*---------------------------------------------------------------------------------*/
+.Offre {
+    ligne-height: 0px;
+    position: relative;
+    width: 700px;
+    height: 200px;
+    background-color: #49b9bd;
+    float: right;
+    margin-right: 35px;
+    margin-top: 25px;
+    border-radius: 0.5em;
+    -webkit-border-radius: 0.5em;
+    -moz-border-radius:0.5em;
+    overflow: hidden;}
+
+.DomaineOffres {
+    background-color: #57bc74;
+    width: 125px;
+    height: 200px;
+    border-top-right-radius: 0.5em;
+    -webkit-border-top-right-radius: 0.5em;
+    -moz-border-top-right-radius:0.5em;
+    border-bottom-right-radius: 0.5em;
+    -webkit-border-bottom-right-radius: 0.5em;
+    -moz-border-bottom-right-radius:0.5em;
+    float: right;}
+
+.DomaineOffres ul {
+    float: left;
+    list-style-type: none;
+    padding: 5px 5px;
+    margin: 5px 5px;}
+
+.Coords {
+    width: 175px;
+    height: 200px;
+    float: left;}
+
+.NomEntreprise {
+    text-align: center;
+    font-size: 1.5em;}
+
+.LogoEntreprise {
+    position: absolute;
+    float: left;
+    bottom: 0px;}
+
+.MiddleOffre {
+    width: 399px;
+    height: 200px;
+    float: left;
+    border-right: 1px solid black;}
+
+div.TitreOFfre {
+    border-bottom: 1px solid black;
+    border-left: 1px solid black;}
+
+p.TitreOFfre {
+    text-align: center;
+    padding: 5px 5px 5px;
+    font-size: 1.5em;}
+
+.Adresse {
+    padding: 5px 5px 5px;}
+
+.Descriptif {
+    padding: 5px 5px 5px;
+    font-size: 0.95em;
+    content: "\02026";}
+/*--------------------------------------------------------------------------------------------*/
+
+.BoutonRecherche1 {
+    background-color: #57bc74;
+    border: 1px solid black;
+    -moz-box-shadow: 0 1px 1px #333333;
+    -webkit-box-shadow: 0 1px 1px #333333;
+    box-shadow: 0 1px 1px #333333;
+    border-radius: 0.5em;
+    -webkit-border-radius: 0.5em;
+    -moz-border-radius:0.5em;
+    margin-left: 15px;
+    width: 100px;
+    height: 25px;
+	margin-top: 25px;
 }
 
-body{
-	background-color: #f3f2f0;
+.BoutonRecherche0 {
+    background-color: #ee3124;
+    border: 1px solid black;
+    -moz-box-shadow: 0 1px 1px #333333;
+    -webkit-box-shadow: 0 1px 1px #333333;
+    box-shadow: 0 1px 1px #333333;
+    border-radius: 0.5em;
+    -webkit-border-radius: 0.5em;
+    -moz-border-radius:0.5em;
+    margin-left: 15px;
+    width: 100px;
+    height: 25px;
+    margin-top: 25px;
 }
 
-#BoutonDev{
-	float:right;
-	left : 35%;}
 
-article{
-	background-color: #49b9bd;
-	border: 1px solid black;
-	width: 80%;
-	float: right;
-	margin-bottom: 20px;
-}
-
-h1{
-	width : 300px;
-	border: 1px solid black;
-	text-align: center;
-	margin: auto;
-}
-
-#info{
-	float: left;
-	width: 200px;
-}
-
-#descriptif{
+.CentrerImage{
 	position: relative;
-	display: block;
-	width: 400px;
-	margin : auto;
 }
 
-#logos{
-	border: 1px solid black;
-	width: 175px;
-	height: 125px;
-	position : relative;
-	float : right;
-	left : -77%;
-}
-
-.clear:after{
-	content: "";
-	display: block;
-	clear: both;
-	height: 0;
-	overflow: hidden;
-}
-
-#div1{
-
-	height: 60px;
-}
-#recherche{
-
-	width: 150px;
-	height: 150px;
-	position : relative;
-	float : right;
-	right: -23%;
-	margin-top: -22%;
-}
-
-.formulaire{
-	float: left;
-}
-
-.filtre{
-	margin-bottom: 40px;
-}

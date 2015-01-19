@@ -31,10 +31,11 @@
         protected function Affichage() {
 
             $data['Entreprises'] = $this->Model_Entreprises->liste_entreprises();
+            $data['ListeDomaineEntreprise'] = $this->Model_Entreprises->liste_domaine_entreprise();
 
             $inclusions['welcome']='<p>Bonjour, vous êtes connectés</p> <p>en tant que '.$this->session->userdata('user_input').'</p>';
             $inclusions['inclusions']='<link rel="stylesheet" media="all" type"text/css" href="'.base_url().'Public/css/Entreprises.css"/>
-            <script type="text/javascript" src="'.base_url().'Public/js/Eleves.js"></script>';
+            <script type="text/javascript" src="'.base_url().'Public/js/Eleve.js"></script>';
             
             $this->load->view('view_Template_head',$inclusions);
             $this->load->view('view_Entreprises',$data);

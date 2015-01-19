@@ -37,6 +37,13 @@
             return $this->db->query($sql)->result();
         }
 
+        public function liste_domaine_entreprise() {
+           $sql= "SELECT fait.*,domaine.TypeDomaine,domaine.Domaine,domaine.idDomaine FROM fait
+            LEFT JOIN bdd_mer.domaine ON fait.idDomaine = domaine.idDomaine";
+            return $this->db->query($sql)->result();
+
+        }
+
        /* public function adresse_entreprise () {
             $sql= 
 
