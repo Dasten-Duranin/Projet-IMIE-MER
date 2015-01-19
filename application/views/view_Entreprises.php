@@ -1,7 +1,7 @@
 <section>
     <div class="clear">
         <img class="BoutonTypeDomaine" title="Reseaux" alt="Reseaux" src="<?php echo base_url(); ?>Public/img/Interface/Reseaux.png" width="150" height="37" />
-        <img class="BoutonTypeDomaine" title="developpement" id="Developpement" alt="developpement" src="<?php echo base_url(); ?>Public/img/Interface/Developpement.png" width="240" height="37" />
+        <img class="BoutonTypeDomaine" title="developpement" id="Developpement" alt="developpement" src="<?php echo base_url(); ?>Public/img/Interface/Developpement.png"width="240" height="37" />
     </div>
    <div class="clear">
         <div id="Filtre">
