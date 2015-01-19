@@ -14,7 +14,7 @@
                 <a href="<?php echo base_url();?>EditionProfil/Index"><img alt="édition du profil" title="edition du profil" src="<?php echo base_url();?>Public/img/Interface/EditProfil.png" width="50" height="50" /></a>
                 <a href="Deconnexion"><img alt="Se déconnecter" title="Se déconnecter" src="<?php echo base_url();?>Public/img/Interface/LogOut.png" width="50" height="50" /></a>
             </aside>
-            <img id="logo" title="logoIMIE" alt="logoIMIE" src="<?php echo base_url();?>Public/img/Interface/LogoIMIE.png" />
+            <a href="<?php echo base_url();?>Accueil/Index"><img id="logo" title="logoIMIE" alt="logoIMIE" src="<?php echo base_url();?>Public/img/Interface/LogoIMIE.png" /></a>
             <nav>
                 <ul>
                     <li><a href="<?php echo base_url();?>Eleves/Index" >Élèves</a></li>
