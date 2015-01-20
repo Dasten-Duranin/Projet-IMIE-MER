@@ -26,6 +26,12 @@ class Model_Accueil extends CI_Model {
         ORDER BY rand() LIMIT 0,5";
         return $this->db->query($sql)->result();
     }
+    public function domaines_offres() {
+        $sql = "SELECT domaine.idDomaine,domaine.Domaine,domaine.logoDomaine,demande.* FROM domaine
+        LEFT JOIN bdd_mer.demande ON domaine.idDomaine = demande.idDomaine";
+        return $this->db->query($sql)->result();
+    }
+
 
     /**********************/
     /********Eleves********/

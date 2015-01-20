@@ -2,7 +2,7 @@ window.addEventListener("load",initialisation,false); /*Ne pas exectuer code tan
 
 function initialisation (TypeDomaine) {
 
-    disp_offre(3);
+    disp_offre();
     disp_eleves(2);
     start();
 
@@ -78,10 +78,67 @@ function disp_eleves(numPage) {
     $('#eleve'+idEleve2).css({'display' : 'block'});
     $('#eleve'+idEleve3).css({'display' : 'block'});
 };
-function disp_offre(numOffre) {
+function disp_offre() {
 
-    $('.offre').css({'display' : 'none'});
 
-    $('#offre'+numOffre).css({'display' : 'block'});
+    var currentOffre=3;
+    $('.Offre').css({'display' : 'none'});
+    $('#Offre'+currentOffre).css({'display' : 'block'});
+
+    console.log(currentOffre);
+    //précédent :
+    $('#previous').click(function() {
+        console.log("précédent");
+        console.log(currentOffre);
+        lastOffre=currentOffre;
+        currentOffre--;
+        if(currentOffre==0) {currentOffre=5};
+        $('.Offre').css({'display' : 'none'});
+        $('#Offre'+currentOffre).css({'display' : 'block'});
+        $('.PositionDiapo')[0].src = $('.PositionDiapo')[0].src.replace("diapoSel","diapoNoSel");
+        $('#diapo'+currentOffre)[0].src.replace("diapoNoSel","diapoSel");
+    });
+
+    //suivant :
+    $('#next').click(function() {
+        console.log("suivant");
+        console.log(currentOffre);
+        lastOffre=currentOffre;
+        currentOffre++;
+        if(currentOffre==6) {currentOffre=1};
+        console.log($('#image')[0].src);
+        $('#image')[0].src=$('#image')[0].src.replace(lastOffre+".jpg", currentOffre+".jpg");
+        $('#diapo'+lastOffre)[0].src="_img/diapoNoSel.png";
+        $('#diapo'+currentOffre)[0].src="_img/diapoSel.png";
+        console.log($('#image')[0].src);
+    });
+
+    //Automatique
+    var diapo = setInterval (function () {
+        console.log("Automatique");
+        console.log(currentOffre);
+        lastOffre=currentOffre;
+        currentOffre++;
+        if(currentOffre==6) {currentOffre=1};
+        console.log($('#image')[0].src);
+        $('#image')[0].src=$('#image')[0].src.replace(lastOffre+".jpg", currentOffre+".jpg");
+        $('#diapo'+lastOffre)[0].src="_img/diapoNoSel.png";
+        $('#diapo'+currentOffre)[0].src="_img/diapoSel.png";
+        console.log($('#image')[0].src);
+    },5000);
+
+    //Lorsque l'on clique sur l'un des indicateurs d'image
+    $('.PositionDiapo').click(function() {
+        console.log("position !");
+        var id = this.id;
+        id = id.replace("diapo", "");
+        console.log(id);
+        $('#image')[0].src=$('#image')[0].src.replace(currentOffre+".jpg", id+".jpg");
+        $('#diapo'+id)[0].src="_img/diapoSel.png";
+        $('#diapo'+currentOffre)[0].src="_img/diapoNoSel.png";
+        currentOffre= id;
+    });
+
+
 
 };

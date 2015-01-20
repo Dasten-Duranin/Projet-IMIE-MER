@@ -7,7 +7,7 @@
             parent::__construct();
         }
 
-        public function Index() { 
+        public function Index() {
 
             $this->load->model('Model_DetailsOffre');
 
@@ -17,7 +17,7 @@
 
                 if ($this->Model_DetailsOffre->check_login($login)) {
                     //check les ids utilisateurs et on les rentre dans la variable ids
-                    $ids = $this->Model_DetailsOffre->idEleve_idEntreprise_dy_login($login); 
+                    $ids = $this->Model_DetailsOffre->idEleve_idEntreprise_dy_login($login);
 
                     if ($ids->idEntreprise != FALSE && $ids->idEleve != FALSE) { //check l'existance des deux id
                         echo 'bonjour '.$login.'<br>';
@@ -28,7 +28,7 @@
                         $this->Affichage_Offre_By_Entreprise(); // redirection vers la vue entreprise
                     }
                     else if ($ids->idEleve != FALSE) { // si idEleve existe alors c'est un élève
-                        $this->Affichage_Details_Offre(); // affichage de l'offre 
+                        $this->Affichage_Details_Offre(); // affichage de l'offre
                     }
                     else {
                         echo 'Bonjour Administrateur, cette section n\'est pas encore construite';
@@ -57,6 +57,30 @@
                 header('location:'.base_url().'Connexion/index');
 
             }
+        }
+        protected function Affichage_Details_Offre() {
+
+            $idOffre = $this->input->get('idOffre');
+            $Offre = $this->Model_DetailsOffre->Offre_By_id($idOffre);
+
+            $login = $this->session->userdata('user_input');
+            $inclusions['welcome']='<p>Bonjour, vous êtes connectés</p> <p>en tant que '.$login.'</p>';
+            $inclusions['inclusions']='<link rel="stylesheet" media="all" type"text/css" href="'.base_url().'Public/css/DetailsOffre.css"/>
+            <script type="text/javascript" src="'.base_url().'Public/js/Eleves.js"></script>';
+
+            if ($Offre != FALSE) {
+
+                $data['Offre']=$Offre;
+                $data['domaines_offre'] = $this->Model_DetailsOffre->domaine_by_offre($idOffre);
+            }
+            else {
+                $data['error']='<section>Il n\'existe pas d\'offre avec une telle ID</section>';
+            }
+
+            $this->load->view('view_Template_head',$inclusions);
+            $this->load->view('view_DetailsOffre',$data);
+            $this->load->view('view_Template_footer');
+
         }
         protected function Affichage_Offre_By_Entreprise() {
 

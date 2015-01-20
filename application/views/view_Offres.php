@@ -39,9 +39,9 @@
                 </aside>
                 <div class="MiddleOffre">
                     <div class="TitreOFfre">
-                        <p class="TitreOFfre">
+                        <a href="'.base_url().'DetailsOffre/Index?idOffre='.$offre->idOffre.'"><p class="TitreOFfre">
                             '.$offre->TitreOffre.'
-                        </p>
+                        </p></a>
                     </div>
                     <div class="Descriptif">
                         '.nl2br($offre->DescriptifOffre).'

@@ -32,6 +32,7 @@ class Accueil extends CI_controller {
 
         $data['eleves'] = $this->Model_Accueil->eleves_random();
         $data['offres'] = $this->Model_Accueil->Offres_random();
+        $data['domaines_offres'] = $this->Model_Accueil->domaines_offres();
 
         $inclusions['welcome']='<p>Bonjour, vous êtes connectés</p> <p>en tant que '.$this->session->userdata('user_input').'</p>';
         $inclusions['inclusions']='<link rel="stylesheet" media="all" type"text/css" href="'.base_url().'Public/css/Accueil.css"/>
