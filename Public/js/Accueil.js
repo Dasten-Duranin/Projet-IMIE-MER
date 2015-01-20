@@ -2,6 +2,7 @@ window.addEventListener("load",initialisation,false); /*Ne pas exectuer code tan
 
 function initialisation (TypeDomaine) {
 
+    disp_offre(3);
     disp_eleves(2);
     start();
 
@@ -10,25 +11,36 @@ function initialisation (TypeDomaine) {
 function start () {
 
     var numPage =2;
-    console.log(numPage);
+    var numOffre =3;
 
 
     $('.ArrowEleve').click(function() {
         if ($(this)[0].id == 'ArrowEleveLeft') {
-            console.log($(this)[0].id);
             if (numPage == 1) {numPage=4;}
             numPage-=1;
-            console.log(numPage)
             disp_eleves(numPage);
         }
         else {
-            console.log($(this)[0].id);
             if (numPage == 3) {numPage=0;}
             numPage+=1;
-            console.log(numPage)
             disp_eleves(numPage);
         }
     });
+
+
+    $('.ArrowOffre').click(function() {
+        if ($(this)[0].id == 'ArrowEleveLeft') {
+            if (numOffre == 1) {numOffre=6;}
+                numOffre-=1;
+                disp_offre(numOffre);
+            }
+        else {
+            if (numOffre == 5) {numOffre=0;}
+                numPage+=1;
+                disp_offre(numOffre);
+            }
+    });
+
 
 };
 
@@ -65,4 +77,11 @@ function disp_eleves(numPage) {
     $('#eleve'+idEleve1).css({'display' : 'block'});
     $('#eleve'+idEleve2).css({'display' : 'block'});
     $('#eleve'+idEleve3).css({'display' : 'block'});
+};
+function disp_offre(numOffre) {
+
+    $('.offre').css({'display' : 'none'});
+
+    $('#offre'+numOffre).css({'display' : 'block'});
+
 };

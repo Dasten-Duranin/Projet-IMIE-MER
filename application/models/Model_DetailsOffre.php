@@ -16,7 +16,7 @@
         public function Offre_By_Entrepris($idOffre, $idEntreprise) {
             $sql = 'SELECT offres.*,entreprise.LogoEntreprise,entreprise.NomEntreprise,entreprise.EmailEntreprise,adresse.* FROM offres
             LEFT JOIN bdd_mer.entreprise ON offres.idEntreprise = entreprise.idEntreprise
-            LEFT JOIN bdd_mer.adresse ON entreprise.idAdresse = adresse.idAdresse WHERE offres.idOffre =?';
+            LEFT JOIN bdd_mer.adresse ON entreprise.idAdresse = adresse.idAdresse WHERE offres.idOffre =? AND entreprise.idEntreprise= ?';
             return $this->db->query($sql, array($idOffre, $idEntreprise))->row();
         }
         public function domaine_by_offre($idOffre) {

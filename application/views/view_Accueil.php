@@ -1,4 +1,22 @@
 <section class="clear">
+    <article class="offres clear">
+
+        <?php $i=0;
+            foreach ($offres as $offre) { $i+=1; echo '
+                <div class="offre" id="offre'.$i.'">
+                    <p class="TitreOffre">'.$offre->TitreOffre.'</p>
+                    <div class="MiddleOffre">
+                        <p class="descriptionOffre">
+                            '.nl2br($offre->DescriptifOffre).'
+                        </p>
+                    </div>
+                </div>
+            ';}
+        ?>
+
+    </article>
+
+
     <article class="eleves clear">
         <img class="ArrowEleve" src="<?php echo base_url();?>Public\img\Interface\ArrowLeft.png" alt="Fleche de Gauche" title="Fleche de Gauche" id="ArrowEleveLeft" />
         <?php $i=0;

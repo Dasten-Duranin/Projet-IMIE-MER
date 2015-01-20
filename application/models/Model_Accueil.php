@@ -19,9 +19,12 @@ class Model_Accueil extends CI_Model {
     /********Offres********/
     /**********************/
 
-    public function Offres_by_idEntreprises($idEntreprise) {
-        $sql = 'SELECT * FROM offres WHERE idEntreprise=?';
-        return $this->db->query($sql, array($idEntreprise))->result();
+    public function Offres_random() {
+        $sql = "SELECT offres.*,entreprise.LogoEntreprise,entreprise.NomEntreprise,entreprise.EmailEntreprise,adresse.* FROM offres
+        LEFT JOIN bdd_mer.entreprise ON offres.idEntreprise = entreprise.idEntreprise
+        LEFT JOIN bdd_mer.adresse ON entreprise.idAdresse = adresse.idAdresse
+        ORDER BY rand() LIMIT 0,5";
+        return $this->db->query($sql)->result();
     }
 
     /**********************/
