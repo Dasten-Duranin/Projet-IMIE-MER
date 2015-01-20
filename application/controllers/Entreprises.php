@@ -10,22 +10,23 @@
 
             $this->load->model('Model_Entreprises');
 
-            if ($this->session->userdata('user_input')) {
+            if ($this->session->userdata('user_input')) {  // check de l'existence d'une session ou non 
 
-                $login = $this->session->userdata('user_input');
 
-                if ($this->Model_Entreprises->check_login($login)) {
+                $login = $this->session->userdata('user_input'); // information sur le login 
 
-                    $this->Affichage();
+                if ($this->Model_Entreprises->check_login($login)) { // check de la véracité des log 
+
+                    $this->Affichage(); //affichage de la page 
 
                 }
                 else {
                     $this->Deconnexion();
                 }
             }
-
+ 
             else {
-                header('location:'.base_url().'Connexion/index');
+                header('location:'.base_url().'Connexion/index'); // si pas de sessions load page de connexion
             }
         }
         protected function Affichage() {
@@ -40,18 +41,6 @@
             $this->load->view('view_Template_head',$inclusions);
             $this->load->view('view_Entreprises',$data);
             $this->load->view('view_Template_footer');
-
-            /*
-            $data['liste_eleves']=$this->Model_Eleves->liste_eleves();
-            $data['liste_souhaits']=$this->Model_Eleves->liste_souhaits();
-            $data['liste_domaine_eleves']=$this->Model_Eleves->liste_domaine_eleves();
-            $data['liste_villes_eleves']=$this->Model_Eleves->liste_villes_eleves();
-            $data['liste_classes_eleves']=$this->Model_Eleves->liste_classes_eleves();
-
-            
-
-            $this->load->view('view_Eleves',$data);
-            $this->load->view('view_Template_footer');*/
 
         }
         public function Deconnexion() {

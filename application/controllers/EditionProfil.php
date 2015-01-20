@@ -16,11 +16,11 @@
 
         public function Index() {
 
-            $this->load->model('Model_EditionProfil');
+            $this->load->model('Model_EditionProfil'); 
 
-            if ($this->session->userdata('user_input')) {
+            if ($this->session->userdata('user_input')) { // check de l'existence d'une session ou non 
 
-                $login = $this->session->userdata('user_input');
+                $login = $this->session->userdata('user_input'); // information sur le login 
 
                 if ($this->Model_EditionProfil->check_login($login)) {
 
