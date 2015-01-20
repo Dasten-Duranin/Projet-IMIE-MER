@@ -7,7 +7,7 @@
             parent::__construct();
         }
 
-        public function Index() {
+        public function Index() { 
 
             $this->load->model('Model_DetailsOffre');
 
@@ -16,19 +16,19 @@
                 $login = $this->session->userdata('user_input');
 
                 if ($this->Model_DetailsOffre->check_login($login)) {
+                    //check les ids utilisateurs et on les rentre dans la variable ids
+                    $ids = $this->Model_DetailsOffre->idEleve_idEntreprise_dy_login($login); 
 
-                    $ids = $this->Model_DetailsOffre->idEleve_idEntreprise_dy_login($login);
-
-                    if ($ids->idEntreprise != FALSE && $ids->idEleve != FALSE) {
+                    if ($ids->idEntreprise != FALSE && $ids->idEleve != FALSE) { //check l'existance des deux id
                         echo 'bonjour '.$login.'<br>';
                         echo 'ceci est normalement impossible, veuillez contacter l\'administrateur de l\'application';
                     }
-                    else if ($ids->idEntreprise != FALSE) {
-                        $this->idEntreprise =$ids->idEntreprise;
-                        $this->Affichage_Offre_By_Entreprise();
+                    else if ($ids->idEntreprise != FALSE) { // si idEntreprise existe alors c'est une entreprise
+                        $this->idEntreprise =$ids->idEntreprise; // on rempli l'idEntreprise du controller
+                        $this->Affichage_Offre_By_Entreprise(); // redirection vers la vue entreprise
                     }
-                    else if ($ids->idEleve != FALSE) {
-                        $this->Affichage_Details_Offre();
+                    else if ($ids->idEleve != FALSE) { // si idEleve existe alors c'est un élève
+                        $this->Affichage_Details_Offre(); // affichage de l'offre 
                     }
                     else {
                         echo 'Bonjour Administrateur, cette section n\'est pas encore construite';

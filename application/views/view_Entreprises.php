@@ -39,9 +39,11 @@
 	                </aside>
 	                <div class="MiddleOffre">
 	                    <div class="TitreOFfre">
-	                        <p class="TitreOFfre">
-	                            '.$entreprise->NomEntreprise.'
-	                        </p>
+                            <a href="'.base_url().'Profil/Index?idEntreprise='.$entreprise->idEntreprise.'">
+    	                        <p class="TitreOFfre">
+    	                            '.$entreprise->NomEntreprise.'
+    	                        </p>
+                            </a>
 	                    </div>
 	                    <div class="Descriptif">
 	                        '.nl2br($entreprise->DescriptifEntreprise).'

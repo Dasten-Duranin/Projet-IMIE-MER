@@ -99,6 +99,14 @@ p.TitreOFfre {
     padding: 5px 5px 5px;
     font-size: 0.95em;
     content: "\02026";}
+
+p{
+    color: black;
+}
+
+a {
+    text-decoration: none;
+}
 /*--------------------------------------------------------------------------------------------*/
 
 .BoutonRecherche1 {
