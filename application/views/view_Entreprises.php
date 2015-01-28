@@ -31,11 +31,11 @@
 		<?php foreach ($Entreprises as $entreprise) { echo '
 	            <article class="Offre clear"">
 	                <aside class="Coords">
-	                    
+
 	                    <p class="Adresse">'.$entreprise->NumVoie.' '.$entreprise->TypeVoie.' '.$entreprise->NomVoie.'<br>
 	                    '.$entreprise->Ville.'<br>
 	                    '.$entreprise->CP.', '.$entreprise->Pays.'</p>
-	                    <img class="LogoEntreprise" src="'; if($entreprise->LogoEntreprise != FALSE) {echo $Entreprise->LogoEntreprise;} else {echo base_url().'Public/img/Defaut_Logo_Entreprise.png';} echo'" width="175" height="115" />
+	                    <img class="LogoEntreprise" src="'; if($entreprise->LogoEntreprise != FALSE) {echo base_url().$entreprise->LogoEntreprise;} else {echo base_url().'Public/img/Defaut_Logo_Entreprise.png';} echo'" width="175" height="115" />
 	                </aside>
 	                <div class="MiddleOffre">
 	                    <div class="TitreOFfre">

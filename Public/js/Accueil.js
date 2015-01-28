@@ -26,21 +26,12 @@ function start () {
             disp_eleves(numPage);
         }
     });
-
-
-    $('.ArrowOffre').click(function() {
-        if ($(this)[0].id == 'ArrowEleveLeft') {
-            if (numOffre == 1) {numOffre=6;}
-                numOffre-=1;
-                disp_offre(numOffre);
-            }
-        else {
-            if (numOffre == 5) {numOffre=0;}
-                numPage+=1;
-                disp_offre(numOffre);
-            }
-    });
-
+    //Automatique
+    var elevesAuto = setInterval (function () {
+        if (numPage == 1) {numPage=6;}
+            numPage-=1;
+            disp_eleves(numPage);
+    },5000);
 
 };
 
@@ -95,8 +86,8 @@ function disp_offre() {
         if(currentOffre==0) {currentOffre=5};
         $('.Offre').css({'display' : 'none'});
         $('#Offre'+currentOffre).css({'display' : 'block'});
-        $('.PositionDiapo')[0].src = $('.PositionDiapo')[0].src.replace("diapoSel","diapoNoSel");
-        $('#diapo'+currentOffre)[0].src.replace("diapoNoSel","diapoSel");
+        $('#diapo'+lastOffre)[0].src = $('#diapo'+lastOffre)[0].src.replace("diapoSel","diapoNoSel");
+        $('#diapo'+currentOffre)[0].src = $('#diapo'+currentOffre)[0].src.replace("diapoNoSel","diapoSel");
     });
 
     //suivant :
@@ -106,11 +97,10 @@ function disp_offre() {
         lastOffre=currentOffre;
         currentOffre++;
         if(currentOffre==6) {currentOffre=1};
-        console.log($('#image')[0].src);
-        $('#image')[0].src=$('#image')[0].src.replace(lastOffre+".jpg", currentOffre+".jpg");
-        $('#diapo'+lastOffre)[0].src="_img/diapoNoSel.png";
-        $('#diapo'+currentOffre)[0].src="_img/diapoSel.png";
-        console.log($('#image')[0].src);
+        $('.Offre').css({'display' : 'none'});
+        $('#Offre'+currentOffre).css({'display' : 'block'});
+        $('#diapo'+lastOffre)[0].src = $('#diapo'+lastOffre)[0].src.replace("diapoSel","diapoNoSel");
+        $('#diapo'+currentOffre)[0].src = $('#diapo'+currentOffre)[0].src.replace("diapoNoSel","diapoSel");
     });
 
     //Automatique
@@ -120,11 +110,10 @@ function disp_offre() {
         lastOffre=currentOffre;
         currentOffre++;
         if(currentOffre==6) {currentOffre=1};
-        console.log($('#image')[0].src);
-        $('#image')[0].src=$('#image')[0].src.replace(lastOffre+".jpg", currentOffre+".jpg");
-        $('#diapo'+lastOffre)[0].src="_img/diapoNoSel.png";
-        $('#diapo'+currentOffre)[0].src="_img/diapoSel.png";
-        console.log($('#image')[0].src);
+        $('.Offre').css({'display' : 'none'});
+        $('#Offre'+currentOffre).css({'display' : 'block'});
+        $('#diapo'+lastOffre)[0].src = $('#diapo'+lastOffre)[0].src.replace("diapoSel","diapoNoSel");
+        $('#diapo'+currentOffre)[0].src = $('#diapo'+currentOffre)[0].src.replace("diapoNoSel","diapoSel");
     },5000);
 
     //Lorsque l'on clique sur l'un des indicateurs d'image
@@ -132,13 +121,10 @@ function disp_offre() {
         console.log("position !");
         var id = this.id;
         id = id.replace("diapo", "");
-        console.log(id);
-        $('#image')[0].src=$('#image')[0].src.replace(currentOffre+".jpg", id+".jpg");
-        $('#diapo'+id)[0].src="_img/diapoSel.png";
-        $('#diapo'+currentOffre)[0].src="_img/diapoNoSel.png";
+        $('.Offre').css({'display' : 'none'});
+        $('#Offre'+id).css({'display' : 'block'});
+        $('#diapo'+currentOffre)[0].src = $('#diapo'+currentOffre)[0].src.replace("diapoSel","diapoNoSel");
+        $('#diapo'+id)[0].src = $('#diapo'+id)[0].src.replace("diapoNoSel","diapoSel");
         currentOffre= id;
     });
-
-
-
 };

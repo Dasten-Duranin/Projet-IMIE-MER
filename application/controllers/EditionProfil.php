@@ -16,11 +16,11 @@
 
         public function Index() {
 
-            $this->load->model('Model_EditionProfil'); 
+            $this->load->model('Model_EditionProfil');
 
-            if ($this->session->userdata('user_input')) { // check de l'existence d'une session ou non 
+            if ($this->session->userdata('user_input')) { // check de l'existence d'une session ou non
 
-                $login = $this->session->userdata('user_input'); // information sur le login 
+                $login = $this->session->userdata('user_input'); // information sur le login
 
                 if ($this->Model_EditionProfil->check_login($login)) {
 
@@ -170,7 +170,6 @@
             $LieuNaiss = $this->input->post('LieuNaiss');
             $TelEleve = $this->input->post('TelEleve');
             $EmailEleve = $this->input->post('EmailEleve');
-            /*$PhotoProfil = $this->input->post('PhotoProfil');*/
             $GitHub = $this->input->post('GitHub');
             $DoYouBuzz = $this->input->post('DoYouBuzz');
             $Linkedin = $this->input->post('Linkedin');
@@ -181,25 +180,65 @@
             $Stage = $this->input->post('Stage');
             $Classe = $this->input->post('Classe');
 
+            if ($_FILES['PhotoProfil']['name'] != FALSE) {
+
+                $OldPicture = $this->Model_EditionProfil->photo_by_idEleve($this->idEleve)->PhotoProfil;
+                if ($OldPicture != FALSE) {
+
+                    unlink ($OldPicture);
+
+                    $photoExtention = str_replace('image/', ".", $_FILES['PhotoProfil']['type']);
+                    if ($photoExtention == '.jpeg') {$photoExtention = '.jpg';}
+
+                    $photoName = 'PhotoProfilEleve'.$this->idEleve;
+                    $photoPath = './Public/img/PhotosEleves/';
+
+                    $PhotoProfil = 'Public/img/PhotosEleves/'.$photoName.$photoExtention;
+
+                    $field = 'PhotoProfil';
+                    $this->do_upload($field, $photoName, $photoPath);
+                }
+                else {
+                    $photoExtention = str_replace('image/', ".", $_FILES['PhotoProfil']['type']);
+                    if ($photoExtention == '.jpeg') {$photoExtention = '.jpg';}
+
+                    $photoName = 'PhotoProfilEleve'.$this->idEleve;
+                    $photoPath = './Public/img/PhotosEleves/';
+
+                    $PhotoProfil = 'Public/img/PhotosEleves/'.$photoName.$photoExtention;
+
+                    $this->errorEl = 'isset';
+                    $field = 'PhotoProfil';
+                    $this->do_upload($field, $photoName, $photoPath);
+                }
+            }
+            else {
+                $OldPicture = $this->Model_EditionProfil->photo_by_idEleve($this->idEleve)->PhotoProfil;
+                if ($OldPicture != FALSE) {
+                    $PhotoProfil = $OldPicture;
+                }
+                else {
+                    $PhotoProfil = NULL;
+                }
+            }
+
             if ($Stage != FALSE) {$Stage=1;} else {$Stage=0;}
             if ($Alternance != FALSE) {$Alternance=1;} else {$Alternance=0;}
 
             $DomaineDevEl = $this->input->post('DomaineDevEl');
             $DomaineResEl = $this->input->post('DomaineResEl');
 
-            $this->Model_EditionProfil->update_eleve($Nom, $Prenom, $Sexe, $DateNaiss, $LieuNaiss, $TelEleve, $EmailEleve/*, $PhotoProfil*/, $GitHub, $DoYouBuzz, $Linkedin, $Twitter, $Accroche, $Descriptif, $Alternance, $Stage, $Classe, $this->idEleve);
+            $this->Model_EditionProfil->update_eleve($Nom, $Prenom, $Sexe, $DateNaiss, $LieuNaiss, $TelEleve, $EmailEleve, $PhotoProfil, $GitHub, $DoYouBuzz, $Linkedin, $Twitter, $Accroche, $Descriptif, $Alternance, $Stage, $Classe, $this->idEleve);
             $this->Model_EditionProfil->delete_domaines_eleves($this->idEleve);
 
             foreach( $DomaineDevEl as $DomaineDe ) {
                 if ($DomaineDe != 0) {
                     $this->Model_EditionProfil->insert_souhait_eleve($DomaineDe, $this->idEleve);
-                    echo 'idDomainDe :'.$DomaineDe.'<br>';
                 }
             }
             foreach( $DomaineResEl as $DomaineRe ) {
                 if ($DomaineRe != 0) {
                     $this->Model_EditionProfil->insert_souhait_eleve($DomaineRe, $this->idEleve);
-                    echo 'idDomainRe :'.$DomaineRe.'<br>';
                 }
             }
             header('location:'.base_url().'EditionProfil/Index');
@@ -217,6 +256,48 @@
             $Alternant = $this->input->post('Alternant');
             $Employe = $this->input->post('Employe');
 
+            if ($_FILES['LogoEntreprise']['name'] != FALSE) {
+
+                $OldLogo = $this->Model_EditionProfil->logo_by_idEntreprise($this->idEntreprise)->LogoEntreprise;
+                if ($OldLogo != FALSE) {
+
+                    unlink ($OldLogo);
+
+                    $photoExtention = str_replace('image/', ".", $_FILES['LogoEntreprise']['type']);
+                    if ($photoExtention == '.jpeg') {$photoExtention = '.jpg';}
+
+                    $photoName = 'LogoEntreprise'.$this->idEntreprise;
+                    $photoPath = './Public/img/LogosEntreprises/';
+
+                    $LogoEntreprise = 'Public/img/LogosEntreprises/'.$photoName.$photoExtention;
+
+                    $field = 'LogoEntreprise';
+                    $this->do_upload($field, $photoName, $photoPath);
+                }
+                else {
+                    $photoExtention = str_replace('image/', ".", $_FILES['LogoEntreprise']['type']);
+                    if ($photoExtention == '.jpeg') {$photoExtention = '.jpg';}
+
+                    $photoName = 'LogoEntreprise'.$this->idEntreprise;
+                    $photoPath = './Public/img/LogosEntreprises/';
+
+                    $LogoEntreprise = 'Public/img/LogosEntreprises/'.$photoName.$photoExtention;
+
+                    $this->errorEl = 'isset';
+                    $field = 'LogoEntreprise';
+                    $this->do_upload($field, $photoName, $photoPath);
+                }
+            }
+            else {
+                $OldLogo = $this->Model_EditionProfil->logo_by_idEntreprise($this->idEntreprise)->LogoEntreprise;
+                if ($OldLogo != FALSE) {
+                    $LogoEntreprise = $OldLogo;
+                }
+                else {
+                    $LogoEntreprise = NULL;
+                }
+            }
+
 
             if ($Stagiaire != FALSE) {$Stagiaire=1;} else {$Stagiaire=0;}
             if ($Alternant != FALSE) {$Alternant=1;} else {$Alternant=0;}
@@ -225,19 +306,17 @@
             $DomaineDevEn = $this->input->post('DomaineDevEn');
             $DomaineResEn = $this->input->post('DomaineResEn');
 
-            $this->Model_EditionProfil->update_entreprise($NomEntreprise, $TelEntreprise, $FaxEntreprise, $EmailEntreprise, $DescriptifEntreprise, $Stagiaire, $Alternant, $Employe, $this->idEntreprise);
+            $this->Model_EditionProfil->update_entreprise($NomEntreprise, $LogoEntreprise, $TelEntreprise, $FaxEntreprise, $EmailEntreprise, $DescriptifEntreprise, $Stagiaire, $Alternant, $Employe, $this->idEntreprise);
             $this->Model_EditionProfil->delete_domaines_entreprise($this->idEntreprise);
 
             foreach( $DomaineDevEn as $DomaineDe ) {
                 if ($DomaineDe != 0) {
                     $this->Model_EditionProfil->insert_fait_entreprise($DomaineDe, $this->idEntreprise);
-                    echo 'idDomainDe :'.$DomaineDe.'<br>';
                 }
             }
             foreach( $DomaineResEn as $DomaineRe ) {
                 if ($DomaineRe != 0) {
                     $this->Model_EditionProfil->insert_fait_entreprise($DomaineRe, $this->idEntreprise);
-                    echo 'idDomainRe :'.$DomaineRe.'<br>';
                 }
             }
             header('location:'.base_url().'EditionProfil/Index');
@@ -314,6 +393,35 @@
             }
 
         }
+        function do_upload($field, $photoName, $photoPath)
+        {
 
+            $config['upload_path'] = $photoPath;
+            $config['allowed_types'] = 'gif|jpg|png';
+            $config['max_size']	= '1000';
+            $config['max_width']  = '10240';
+            $config['max_height']  = '10240';
+            $config['file_name'] = $photoName;
+
+
+            $this->load->library('upload', $config);
+
+            if ( ! $this->upload->do_upload($field))
+            {
+                $error = array('error' => $this->upload->display_errors());
+
+                /*foreach ($error as $err) {
+                    $this->errorEl = $this->errorEl.$err;
+                }*/
+
+                /*$this->errorEl = 'Update failed';*/
+            }
+            else
+            {
+                $data = array('upload_data' => $this->upload->data());
+
+                /*$this->errorEl = 'Update success';*/
+            }
+        }
     }
 ?>

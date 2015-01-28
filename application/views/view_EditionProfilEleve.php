@@ -1,7 +1,7 @@
 <section>
     <div id="InscriptionEleve" class="Formulaire clear">
         <?php if(isset($errorEl)) {echo '<div id="errorEl">'.$errorEl.'</div>';} ?>
-        <form method="POST">
+        <form method="POST" enctype="multipart/form-data">
             <aside id="FormLeftEl">
                 <table id="FormCoord">
                     <tbody>

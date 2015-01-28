@@ -56,7 +56,6 @@
             $sql = 'SELECT eleve.* FROM bdd_mer.eleve WHERE idEleve =?';
             return $this->db->query($sql, array($idEleve))->row();
         }
-
         public function domaines_reseau_by_eleve($idEleve) {
             $sql = 'SELECT souhaite.idEleve,domaine.logoDomaine,domaine.Domaine,domaine.TypeDomaine FROM souhaite
             LEFT JOIN bdd_mer.domaine ON souhaite.idDomaine = domaine.idDomaine
@@ -135,9 +134,13 @@
 
 
 
-        public function update_eleve($Nom, $Prenom, $Sexe, $DateNaiss, $LieuNaiss, $TelEleve, $EmailEleve/*, $PhotoProfil*/, $GitHub, $DoYouBuzz, $Linkedin, $Twitter, $Accroche, $Descriptif, $Alternance, $Stage, $Classe, $idEleve) {
-            $sql = 'UPDATE bdd_mer.eleve SET Nom = ?, Prenom = ?, Sexe = ?, DateNaiss = ?, LieuNaiss = ?, TelEleve = ?, EmailEleve = ?, GitHub = ?, DoYouBuzz = ?, Linkedin = ?, Twitter = ?, Accroche = ?, Descriptif = ?, Alternance = ?, Stage = ?, Classe = ? WHERE eleve.idEleve = ?';
-            $this->db->query($sql, array($Nom, $Prenom, $Sexe, $DateNaiss, $LieuNaiss, $TelEleve, $EmailEleve/*, $PhotoProfil*/, $GitHub, $DoYouBuzz, $Linkedin, $Twitter, $Accroche, $Descriptif, $Alternance, $Stage, $Classe, $idEleve));
+        public function photo_by_idEleve($idEleve) {
+            $sql = 'SELECT eleve.PhotoProfil FROM bdd_mer.eleve WHERE idEleve =?';
+            return $this->db->query($sql, array($idEleve))->row();
+        }
+        public function update_eleve($Nom, $Prenom, $Sexe, $DateNaiss, $LieuNaiss, $TelEleve, $EmailEleve, $PhotoProfil, $GitHub, $DoYouBuzz, $Linkedin, $Twitter, $Accroche, $Descriptif, $Alternance, $Stage, $Classe, $idEleve) {
+            $sql = 'UPDATE bdd_mer.eleve SET Nom = ?, Prenom = ?, Sexe = ?, DateNaiss = ?, LieuNaiss = ?, TelEleve = ?, EmailEleve = ?, PhotoProfil= ?, GitHub = ?, DoYouBuzz = ?, Linkedin = ?, Twitter = ?, Accroche = ?, Descriptif = ?, Alternance = ?, Stage = ?, Classe = ? WHERE eleve.idEleve = ?';
+            $this->db->query($sql, array($Nom, $Prenom, $Sexe, $DateNaiss, $LieuNaiss, $TelEleve, $EmailEleve, $PhotoProfil, $GitHub, $DoYouBuzz, $Linkedin, $Twitter, $Accroche, $Descriptif, $Alternance, $Stage, $Classe, $idEleve));
         }
 
         public function delete_domaines_eleves($idEleve) {
@@ -161,9 +164,13 @@
             return ($this->db->query($sql,array($NomEntreprise))->num_rows()>0);
         }*/
 
-        public function update_entreprise($NomEntreprise, $TelEntreprise, $FaxEntreprise, $EmailEntreprise, $DescriptifEntreprise, $Stagiaire, $Alternant, $Employe, $idEntreprise) {
-            $sql = 'UPDATE bdd_mer.entreprise SET NomEntreprise = ?, TelEntreprise = ?, FaxEntreprise = ?, EmailEntreprise = ?, DescriptifEntreprise = ?, Stagiaire = ?, Alternant = ?, Employe = ? WHERE entreprise.idEntreprise = ?';
-            $this->db->query($sql, array($NomEntreprise, $TelEntreprise, $FaxEntreprise, $EmailEntreprise, $DescriptifEntreprise, $Stagiaire, $Alternant, $Employe, $idEntreprise));
+        public function logo_by_idEntreprise($idEntreprise) {
+            $sql = 'SELECT entreprise.LogoEntreprise FROM bdd_mer.entreprise WHERE idEntreprise =?';
+            return $this->db->query($sql, array($idEntreprise))->row();
+        }
+        public function update_entreprise($NomEntreprise, $LogoEntreprise, $TelEntreprise, $FaxEntreprise, $EmailEntreprise, $DescriptifEntreprise, $Stagiaire, $Alternant, $Employe, $idEntreprise) {
+            $sql = 'UPDATE bdd_mer.entreprise SET NomEntreprise = ?, LogoEntreprise = ?, TelEntreprise = ?, FaxEntreprise = ?, EmailEntreprise = ?, DescriptifEntreprise = ?, Stagiaire = ?, Alternant = ?, Employe = ? WHERE entreprise.idEntreprise = ?';
+            $this->db->query($sql, array($NomEntreprise, $LogoEntreprise, $TelEntreprise, $FaxEntreprise, $EmailEntreprise, $DescriptifEntreprise, $Stagiaire, $Alternant, $Employe, $idEntreprise));
         }
 
         public function delete_domaines_entreprise($idEntreprise) {

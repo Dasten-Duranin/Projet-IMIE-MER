@@ -42,7 +42,7 @@
                 <article class="Eleve">
                     <div class="InfosEleve">
                         <a href="'.base_url().'Profil/Index?idEleve='.$eleve->idEleve.'">
-                            <img src="'; if($eleve->PhotoProfil != FALSE) {echo $eleve->PhotoProfil;} else {echo base_url().'Public/img/Defaut_Photo_Profile.png';} echo '" width="105" height="135" />
+                            <img src="'; if($eleve->PhotoProfil != FALSE) {echo base_url().$eleve->PhotoProfil;} else {echo base_url().'Public/img/Defaut_Photo_Profile.png';} echo '" width="105" height="135" />
                         </a>
                         <p class="Noms '.$eleve->Nom.' '.$eleve->Prenom.' '.str_replace(' ', '_', $eleve->Classe).'">
                             '.$eleve->Nom.'<br>

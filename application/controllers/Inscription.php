@@ -106,7 +106,7 @@
                     $this->Model_Inscription->insert_idEntreprise_On_Utilisateur($this->idEntreprise, $idUtilisateur);
 
                     $this->session->set_userdata('user_input', $login);
-                    header('location:'.base_url().'Eleves/Index');
+                    header('location:'.base_url().'Accueil/Index');
                 }
                 else {
 
@@ -174,7 +174,7 @@
                 $this->Model_Inscription->insert_idEleve_On_Utilisateur($idEleve, $idUtilisateur);
 
                 $this->session->set_userdata('user_input', $login);
-                header('location:'.base_url().'Eleves/Index');
+                header('location:'.base_url().'Accueil/Index');
             }
             else {
 

@@ -1,7 +1,7 @@
 <section>
     <div id="InscriptionEntreprise" class="Formulaire clear">
         <?php if(isset($errorEn)) {echo '<div id="ErrorEntreprise">'.$errorEn.'</div>';} ?>
-        <form method="POST">
+        <form method="POST" enctype="multipart/form-data">
             <aside id="FormLeftEn">
                 <table id="FormCoord">
                     <tbody>
@@ -60,8 +60,8 @@
                 <input name="SubmitEntreprise" type="submit" id="SubmitEntreprise" value="S'inscrire">
             </aside>
             <div id="FormPhotoEn">
-                <label for="Logo">Logo :</label>
-                <input type="file" name="Logo"></input>
+                <label for="LogoEntreprise">Logo :</label>
+                <input type="file" name="LogoEntreprise"></input>
             </div>
             <aside id="FormRightEn">
                 <table id="FormAdresseEn">
