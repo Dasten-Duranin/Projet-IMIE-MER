@@ -2,7 +2,7 @@
     <div class="clear">
         <div id="InfosPerso">
             <div class="clear">
-                <img src="<?php if($eleve->PhotoProfil != FALSE) {echo $eleve->PhotoProfil;} else {echo base_url().'Public/img/Defaut_Photo_Profile.png';}?>" width="157" height="202" />
+                <img src="<?php if($eleve->PhotoProfil != FALSE) {echo base_url().$eleve->PhotoProfil;} else {echo base_url().'Public/img/Defaut_Photo_Profile.png';}?>" width="157" height="202" />
                 <aside id="Identite">
                     <?php echo
                         $eleve->Nom.'<br>'.

@@ -53,7 +53,7 @@
                         '.$eleve->Prenom.'
                     </div>
                     <a href="'.base_url().'Profil/Index?idEleve='.$eleve->idEleve.'">
-                        <img src="'; if($eleve->PhotoProfil != FALSE) {echo $eleve->PhotoProfil;} else {echo base_url().'Public/img/Defaut_Photo_Profile.png';} echo '" width="210" height="270" />
+                        <img src="'; if($eleve->PhotoProfil != FALSE) {echo base_url().$eleve->PhotoProfil;} else {echo base_url().'Public/img/Defaut_Photo_Profile.png';} echo '" width="210" height="270" />
                     </a>
                     <div class="accroche">
                         '.$eleve->Accroche.'

@@ -1,6 +1,6 @@
 <section class="clear">
     <div id="Titres" class="clear">
-        <img src="<?php if($entreprise->LogoEntreprise != FALSE) {echo $entreprise->LogoEntreprise;} else {echo base_url().'Public/img/Defaut_Logo_Entreprise.png';} ?>" width="200" height="133" />
+        <img src="<?php if($entreprise->LogoEntreprise != FALSE) {echo base_url().$entreprise->LogoEntreprise;} else {echo base_url().'Public/img/Defaut_Logo_Entreprise.png';} ?>" width="200" height="133" />
         <aside id="TitreEntreprise">
             <span><?php echo $entreprise->NomEntreprise ?></span>
         </aside>
