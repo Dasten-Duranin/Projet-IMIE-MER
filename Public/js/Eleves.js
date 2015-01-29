@@ -63,21 +63,21 @@ function filtre (typeDomaine, classe, domaine, ville, stage, alternance, Name) {
         if (stage != 0 || alternance != 0) {
 
             if (stage == alternance) {
-                $('.Eleve .InfosEleve .Noms').each(function() {// check tout les boutons de stage/Alternance
+                $('.Eleve .InfosEleve .NOMS').each(function() {// check tout les boutons de stage/Alternance
                     if($(this).children('.BoutonRecherche0').length >= 1) {//check la personne recherche un stage et alterance ou non
                         $(this).parent().parent().css({'display' : 'none'})/*si il n'y en a pas l'élément disparaît*/
                     }
                 });
             }
             else if (stage == 1 && alternance == 0) {
-                $('.Eleve .InfosEleve .Noms').each(function() {// check tout les boutons de stage/Alternance
+                $('.Eleve .InfosEleve .NOMS').each(function() {// check tout les boutons de stage/Alternance
                     if($(this).children('.Stage1').length == 0) {//check la personne recherche un stage ou non
                         $(this).parent().parent().css({'display' : 'none'})/*si il n'y en a pas l'élément disparaît*/
                     }
                 });
             }
             else if (stage == 0 && alternance == 1) {
-                $('.Eleve .InfosEleve .Noms').each(function() {/* check tout les Li*/
+                $('.Eleve .InfosEleve .NOMS').each(function() {/* check tout les Li*/
                     if($(this).children('.Alternance1').length == 0) {/*check si tout les li ont une class avec le type de domaine recherché*/
                         $(this).parent().parent().css({'display' : 'none'})/*si il n'y en a pas l'élément disparaît*/
                         console.log('coucou3');
@@ -120,9 +120,9 @@ function filtre (typeDomaine, classe, domaine, ville, stage, alternance, Name) {
             }
         });
     }
-    if (Name != '') { // On regarde si le champ où l'on cherche des noms est rempli ou non.
+    if (Name != '') { // On regarde si le champ où l'on cherche des NOMS est rempli ou non.
         $('.Eleve .InfosEleve').each(function() { // Pour tous les eleves
-            if($(this).children('[class*="Name'+Name+'"]').length == 0) {//On regarde s'ils ont une classe Nom+la cherche
+            if($(this).children('div[class*="'+Name+'"]').length == 0) {//On regarde s'ils ont une classe Nom+la cherche
                 $(this).parent().css({'display' : 'none'})//Sinon on cache l'eleve
             }
         });

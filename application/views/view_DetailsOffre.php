@@ -2,7 +2,7 @@
     if (isset($Offre)) {echo '
         <section class="clear">
             <div id="Titres" class="clear">
-                <img src="'; if($Offre->LogoEntreprise != FALSE) {echo $Offre->LogoEntreprise;} else {echo base_url().'Public/img/Defaut_Logo_Entreprise.png';} echo'" width="200" height="133" />
+                <img src="'; if($Offre->LogoEntreprise != FALSE) {echo base_url().$Offre->LogoEntreprise;} else {echo base_url().'Public/img/Defaut_Logo_Entreprise.png';} echo'" width="200" height="133" />
                 <aside id="TitreOffre">
                     <span>'.$Offre->TitreOffre.'</span>
                 </aside>

@@ -68,21 +68,21 @@ function filtre (typeDomaine, domaine, ville, stage, alternance, emploi, Name) {
 
     if (stage != 0 || alternance != 0 || emploi != 0) {
         if (stage == 1) {
-            $('.Offre .DomaineOffres').each(function() {// check tout les boutons de stage/Alternance
+            $('.Offre .TypeOffre').each(function() {// check tout les boutons de stage/Alternance
                 if($(this).children('.Stage1').length == 0) {//check la personne recherche un stage ou non
                     $(this).parent().css({'display' : 'none'})/*si il n'y en a pas l'élément disparaît*/
                 }
             });
         }
         if (alternance == 1) {
-            $('.Offre .DomaineOffres').each(function() {/* check tout les Li*/
+            $('.Offre .TypeOffre').each(function() {/* check tout les Li*/
                 if($(this).children('.Alternance1').length == 0) {/*check si tout les li ont une class avec le type de domaine recherché*/
                     $(this).parent().css({'display' : 'none'})/*si il n'y en a pas l'élément disparaît*/
                 }
             });
         }
         if (emploi == 1) {
-            $('.Offre .DomaineOffres').each(function() {/* check tout les Li*/
+            $('.Offre .TypeOffre').each(function() {/* check tout les Li*/
                 if($(this).children('.Emploi1').length == 0) {/*check si tout les li ont une class avec le type de domaine recherché*/
                     $(this).parent().css({'display' : 'none'})/*si il n'y en a pas l'élément disparaît*/
                 }
@@ -91,7 +91,7 @@ function filtre (typeDomaine, domaine, ville, stage, alternance, emploi, Name) {
     }
     if (typeDomaine != 'tous') {
 
-        $('.Offre .DomaineEntreprise ul').each(function() {/* check tout les Li*/
+        $('.Offre .DomaineOffres ul').each(function() {/* check tout les Li*/
             if($(this).children('.'+typeDomaine).length == 0) {/*check si tout les li ont une class avec le type de domaine recherché*/
                 $(this).parent().parent().css({'display' : 'none'})/*si il n'y en a pas l'élément disparaît*/
             }
@@ -100,7 +100,7 @@ function filtre (typeDomaine, domaine, ville, stage, alternance, emploi, Name) {
     }
     if (domaine != 'Tous') {
 
-        $('.Offre .DomaineEntreprise ul').each(function() {
+        $('.Offre .DomaineOffres ul').each(function() {
             if($(this).children('.'+domaine).length == 0) {
                 $(this).parent().parent().css({'display' : 'none'})
             }
@@ -111,7 +111,7 @@ function filtre (typeDomaine, domaine, ville, stage, alternance, emploi, Name) {
         console.log(ville);
         $('.Offre .Coords .Adresse').each(function() {
             if($(this).children('.'+ville).length == 0) {
-                $(this).parent().css({'display' : 'none'})
+                $(this).parent().parent.parent().css({'display' : 'none'})
             }
         });
     }

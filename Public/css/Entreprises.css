@@ -87,7 +87,7 @@ div.TitreOFfre {
     border-bottom: 1px solid black;
     border-left: 1px solid black;}
 
-p.TitreOFfre {
+p.TitreOffre {
     text-align: center;
     padding: 5px 5px 5px;
     font-size: 1.5em;}
@@ -144,3 +144,8 @@ a {
 	position: relative;
 }
 
+.DomaineEntreprise {
+	display: none;}
+
+#searchName {
+	width : 125px;}

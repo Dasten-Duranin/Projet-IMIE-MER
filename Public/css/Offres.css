@@ -26,6 +26,9 @@
 #Filtre * {
     margin: 15px 5px;}
 
+#searchName {
+    width: 125px;}
+
 .FiltreVille {
     width: 100px;}
 
@@ -85,7 +88,7 @@ div.TitreOFfre {
     border-bottom: 1px solid black;
     border-left: 1px solid black;}
 
-p.TitreOFfre {
+p.TITREOFFRE {
     text-align: center;
     padding: 5px 5px 5px;
     font-size: 1.5em;}
@@ -101,3 +104,6 @@ p.TitreOFfre {
     padding: 5px 5px 5px;
     font-size: 0.95em;
     content: "\02026";}
+
+.TypeOffre {
+    display: none;}

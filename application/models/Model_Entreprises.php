@@ -16,9 +16,9 @@
             return $this->db->query($sql)->result();
         }
 
-        public function liste_souhaits() {
-            $sql = 'SELECT domaine.Domaine,domaine.TypeDomaine,souhaite.idDomaine,souhaite.idEleve FROM souhaite
-            LEFT JOIN bdd_mer.domaine ON souhaite.idDomaine = domaine.idDomaine';
+        public function liste_fait() {
+            $sql = 'SELECT domaine.Domaine,domaine.TypeDomaine,fait.idDomaine,fait.idEntreprise FROM fait
+            LEFT JOIN bdd_mer.domaine ON fait.idDomaine = domaine.idDomaine';
             return $this->db->query($sql)->result();
         }
 
@@ -29,7 +29,7 @@
 
         public function liste_domaine_entreprise() {
            $sql= "SELECT fait.*,domaine.TypeDomaine,domaine.Domaine,domaine.idDomaine FROM fait
-            LEFT JOIN bdd_mer.domaine ON fait.idDomaine = domaine.idDomaine";
+            LEFT JOIN bdd_mer.domaine ON fait.idDomaine = domaine.idDomaine GROUP BY domaine.Domaine";
             return $this->db->query($sql)->result();
 
         }

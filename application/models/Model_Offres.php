@@ -68,13 +68,21 @@ class Model_Offres extends CI_Model {
         LEFT JOIN bdd_mer.adresse ON entreprise.idAdresse = adresse.idAdresse ";
         return $this->db->query($sql)->result();
     }
-    public function liste_domaine_offres() {
+    public function domaines_offres() {
         $sql = "SELECT offres.idOffre,demande.*,domaine.Domaine,domaine.idDomaine,domaine.TypeDomaine FROM domaine
         LEFT JOIN bdd_mer.demande ON domaine.idDomaine = demande.idDomaine
         LEFT JOIN bdd_mer.offres ON demande.idOffre = offres.idOffre";
         return $this->db->query($sql)->result();
     }
+    public function liste_domaines_offres() {
+        $sql = "SELECT offres.idOffre,demande.*,domaine.Domaine,domaine.idDomaine,domaine.TypeDomaine FROM domaine
+        LEFT JOIN bdd_mer.demande ON domaine.idDomaine = demande.idDomaine
+        LEFT JOIN bdd_mer.offres ON demande.idOffre = offres.idOffre
+        GROUP BY domaine.Domaine";
+        return $this->db->query($sql)->result();
+    }
 
+    
 /*   ▄▄▄▄▄▄▄▄▄▄▄  ▄▄▄▄▄▄▄▄▄▄▄  ▄▄▄▄▄▄▄▄▄▄▄  ▄▄▄▄▄▄▄▄▄▄▄  ▄▄▄▄▄▄▄▄▄▄▄  ▄▄▄▄▄▄▄▄▄▄▄  ▄▄▄▄▄▄▄▄▄▄▄  ▄▄        ▄
     ▐░░░░░░░░░░░▌▐░░░░░░░░░░░▌▐░░░░░░░░░░░▌▐░░░░░░░░░░░▌▐░░░░░░░░░░░▌▐░░░░░░░░░░░▌▐░░░░░░░░░░░▌▐░░▌      ▐░▌
     ▐░█▀▀▀▀▀▀▀▀▀ ▐░█▀▀▀▀▀▀▀█░▌▐░█▀▀▀▀▀▀▀▀▀ ▐░█▀▀▀▀▀▀▀█░▌ ▀▀▀▀█░█▀▀▀▀  ▀▀▀▀█░█▀▀▀▀ ▐░█▀▀▀▀▀▀▀█░▌▐░▌░▌     ▐░▌

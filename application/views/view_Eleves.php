@@ -46,14 +46,14 @@
                         <a href="'.base_url().'Profil/Index?idEleve='.$eleve->idEleve.'">
                             <img src="'; if($eleve->PhotoProfil != FALSE) {echo base_url().$eleve->PhotoProfil;} else {echo base_url().'Public/img/Defaut_Photo_Profile.png';} echo '" width="105" height="135" />
                         </a>
-                        <p class="Noms Name'.strtolower(str_replace(' ', '_', $eleve->Nom)).' '.str_replace(' ', '_', $eleve->Prenom).' '.str_replace(' ', '_', $eleve->Classe).'">
+                        <div class="NOMS '.strtolower(str_replace(' ', '_', $eleve->Nom)).' '.str_replace(' ', '_', $eleve->Prenom).' '.str_replace(' ', '_', $eleve->Classe).'">
                             '.$eleve->Nom.'<br>
                             '.$eleve->Prenom.'<br>
                             '.$eleve->Classe.'<br>
                             <br>
                             <img class="BoutonRecherche'.$eleve->Alternance.' Alternance'.$eleve->Alternance.'" src="'.base_url().'Public/img/Interface/Alternance.png" title="Recherche d\'alternance" alt="recherche d\'alternance" />
                             <img class="BoutonRecherche'.$eleve->Stage.' Stage'.$eleve->Stage.'" src="'.base_url().'Public/img/Interface/Stage.png" title="Recherche de Stage" alt="recherche de Stage" />
-                        </p>
+                        </div>
                         <p class="Ville  '.str_replace(array(' ', "'"), array('_', '_'), $eleve->Ville).'">'.$eleve->Ville.'</p>
                     </div>
                     <span>
