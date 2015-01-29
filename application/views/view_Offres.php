@@ -35,7 +35,7 @@
                     <p class="Adresse">'.$offre->NumVoie.' '.$offre->TypeVoie.' '.$offre->NomVoie.'<br>
                     '.$offre->Ville.'<br>
                     '.$offre->CP.', '.$offre->Pays.'</p>
-                    <img class="LogoEntreprise" src="'; if($offre->LogoEntreprise != FALSE) {echo $Offre->LogoEntreprise;} else {echo base_url().'Public/img/Defaut_Logo_Entreprise.png';} echo'" width="175" height="115" />
+                    <img class="LogoEntreprise" src="'; if($offre->LogoEntreprise != FALSE) {echo base_url().$offre->LogoEntreprise;} else {echo base_url().'Public/img/Defaut_Logo_Entreprise.png';} echo'" width="175" height="115" />
                 </aside>
                 <div class="MiddleOffre">
                     <div class="TitreOFfre">

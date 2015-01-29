@@ -17,7 +17,7 @@
             </div>
             <div id="InscriptionEntreprise" class="Formulaire clear">
                 <?php if(isset($errorEn)) {echo '<div id="ErrorEntreprise">'.$errorEn.'</div>';} ?>
-                <form method="POST">
+                <form method="POST" enctype="multipart/form-data">
                     <aside id="FormLeftEn">
                         <table id="FormCoord">
                             <tbody>
@@ -147,7 +147,7 @@
             </div>
             <div id="InscriptionEleve" class="Formulaire clear">
                 <?php if(isset($errorEl)) {echo '<div id="ErrorEleve">'.$errorEl.'</div>';} ?>
-                <form method="POST">
+                <form method="POST" enctype="multipart/form-data">
                     <aside id="FormLeftEl">
                         <table id="FormCoord">
                             <tbody>

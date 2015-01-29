@@ -26,6 +26,9 @@
     left : 35%;
     margin-bottom: 10px;}
 
+#searchName {
+    width: 125px;}
+
 .Eleve {
     position: relative;
     width: 700px;
@@ -90,3 +93,33 @@ div.InfosEleve {
     list-style-type: none;
     padding: 5px 5px;
     margin: 5px 5px;}
+
+.BoutonRecherche1 {
+    background-color: #57bc74;
+    position: relative;
+    float: right;
+    border: 1px solid black;
+    -moz-box-shadow: 0 1px 1px #333333;
+    -webkit-box-shadow: 0 1px 1px #333333;
+    box-shadow: 0 1px 1px #333333;
+    border-radius: 0.5em;
+    -webkit-border-radius: 0.5em;
+    -moz-border-radius:0.5em;
+    margin-right: 35px;
+    width: 80px;
+    height: 20px;}
+
+.BoutonRecherche0 {
+    background-color: #ee3124;
+    position: relative;
+    float: right;
+    border: 1px solid black;
+    -moz-box-shadow: 0 1px 1px #333333;
+    -webkit-box-shadow: 0 1px 1px #333333;
+    box-shadow: 0 1px 1px #333333;
+    border-radius: 0.5em;
+    -webkit-border-radius: 0.5em;
+    -moz-border-radius:0.5em;
+    margin-right: 35px;
+    width: 80px;
+    height: 20px;}

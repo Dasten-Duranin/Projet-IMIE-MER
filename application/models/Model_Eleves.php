@@ -11,7 +11,7 @@
         }
 
         public function liste_eleves() {
-            $sql = 'SELECT eleve.Nom,eleve.Prenom,eleve.idEleve,eleve.Classe,eleve.PhotoProfil,eleve.Descriptif,adresse.Ville FROM eleve
+            $sql = 'SELECT eleve.Nom,eleve.Prenom,eleve.idEleve,eleve.Classe,eleve.PhotoProfil,eleve.Descriptif,eleve.Alternance,eleve.Stage,adresse.Ville FROM eleve
             LEFT JOIN bdd_mer.adresse ON eleve.idAdresse = adresse.idAdresse';
             return $this->db->query($sql)->result();
         }

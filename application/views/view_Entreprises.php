@@ -14,10 +14,10 @@
                 }
                 ?>
             </select><br>
-            <p>Recherche :</p>
-            <input type="checkbox" name="option2" value="Butter" checked>Stage<br>
-            <input type="checkbox" name="option2" value="Butter" checked>Alternance<br>
-            <input type="checkbox" name="option2" value="Butter" checked>Emploi<br>
+            <p>Vous recherchez :</p>
+            <input type="checkbox" name="option2" value="Butter" checked>Un stage<br>
+            <input type="checkbox" name="option2" value="Butter" checked>Une alternance<br>
+            <input type="checkbox" name="option2" value="Butter" checked>Un Emploi<br>
             <label for="FiltreVille">Localisation :</label><br>
             <select name="FiltreVille" class="FiltreVille">
                 <option>Toutes</option>
