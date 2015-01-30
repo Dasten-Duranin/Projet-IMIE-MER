@@ -393,8 +393,7 @@
             }
 
         }
-        function do_upload($field, $photoName, $photoPath)
-        {
+        function do_upload($field, $photoName, $photoPath) {
 
             $config['upload_path'] = $photoPath;
             $config['allowed_types'] = 'gif|jpg|png';

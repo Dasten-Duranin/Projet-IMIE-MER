@@ -54,8 +54,8 @@
                         <input name="SubmitEntreprise" type="submit" id="SubmitEntreprise" value="S'inscrire">
                     </aside>
                     <div id="FormPhotoEn">
-                        <label for="Logo">Logo :</label>
-                        <input type="file" name="Logo"></input>
+                        <label for="LogoEntreprise">Logo :</label>
+                        <input type="file" name="LogoEntreprise"></input>
                     </div>
                     <aside id="FormRightEn">
                         <table id="FormAdresseEn">
